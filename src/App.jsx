@@ -121,7 +121,7 @@ export default function Portfolio() {
 
   <div className="profiles-grid">
     <a
-      href="https://www.linkedin.com/in/YOUR_LINKEDIN_USERNAME"
+      href="https://www.linkedin.com/in/yagneshwar-reddy-00ba163a3?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
       target="_blank"
       rel="noopener noreferrer"
       className="profile-card"
@@ -131,7 +131,7 @@ export default function Portfolio() {
     </a>
 
     <a
-      href="https://github.com/YOUR_GITHUB_USERNAME"
+      href="https://github.com/yagnesh471"
       target="_blank"
       rel="noopener noreferrer"
       className="profile-card"
@@ -141,7 +141,7 @@ export default function Portfolio() {
     </a>
 
     <a
-      href="https://leetcode.com/YOUR_LEETCODE_USERNAME"
+      href="https://leetcode.com/polly55"
       target="_blank"
       rel="noopener noreferrer"
       className="profile-card"
