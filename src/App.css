@@ -108,9 +108,9 @@ body {
   line-height: 1.6;
 }
 
-/* Sections */
 .about,
 .projects,
+.profiles,
 .contact {
   padding: 80px 20px;
 }
@@ -242,4 +242,48 @@ body {
 /* Click */
 .contact button:active {
   transform: scale(0.97);
+}
+
+/* Profiles */
+.profiles {
+  text-align: center;
+}
+
+.profiles h2 {
+  margin-bottom: 30px;
+  font-size: 32px;
+}
+
+.profiles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.profile-card {
+  display: block;
+  padding: 25px;
+  border-radius: 15px;
+  text-decoration: none;
+  color: inherit;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  transition: all 0.25s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.app.light .profile-card {
+  background: white;
+  color: black;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+  .profiles-grid {
+    grid-template-columns: 1fr;
+  }
 }
