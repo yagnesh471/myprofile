@@ -48,11 +48,12 @@ export default function Portfolio() {
         <h1 className="logo">MyPortfolio</h1>
 
         <div className="nav-links">
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
-        </div>
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#projects">Projects</a>
+  <a href="#profiles">Profiles</a>
+  <a href="#contact">Contact</a>
+</div>
 
         <button className="toggle" onClick={() => setDark(!dark)}>
           {dark ? "☀️" : "🌙"}
@@ -113,6 +114,44 @@ export default function Portfolio() {
           ))}
         </div>
       </section>
+
+      {/* Profiles */}
+<section id="profiles" className="profiles">
+  <h2>Profiles</h2>
+
+  <div className="profiles-grid">
+    <a
+      href="https://www.linkedin.com/in/YOUR_LINKEDIN_USERNAME"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="profile-card"
+    >
+      <h3>LinkedIn</h3>
+      <p>Connect with me professionally.</p>
+    </a>
+
+    <a
+      href="https://github.com/YOUR_GITHUB_USERNAME"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="profile-card"
+    >
+      <h3>GitHub</h3>
+      <p>Check out my repositories and code.</p>
+    </a>
+
+    <a
+      href="https://leetcode.com/YOUR_LEETCODE_USERNAME"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="profile-card"
+    >
+      <h3>LeetCode</h3>
+      <p>View my problem-solving profile.</p>
+    </a>
+  </div>
+</section>
+      
 
       {/* Contact */}
       <section id="contact" className="contact">
