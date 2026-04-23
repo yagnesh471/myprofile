@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import emailjs from "emailjs-com";
 import "./App.css";
 
 export default function Portfolio() {
@@ -9,9 +10,30 @@ export default function Portfolio() {
   const [line2, setLine2] = useState("");
   const [line3, setLine3] = useState("");
 
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState("");
+  const [errorMsg, setErrorMsg] = useState("");
+
   const roles = ["Web Developer", "Data Analyst", "React Developer"];
 
-  // Promise-based typing function
+  const projects = [
+    {
+      title: "Online Food Delivery",
+      desc: "A full stack food ordering web app with login, cart, payment and tracking.",
+      link: "https://transcendent-kataifi-a749b4.netlify.app/",
+    },
+    {
+      title: "Weather API",
+      desc: "A weather monitoring app using API integration and dynamic UI updates.",
+      link: "https://your-weather-project-link.com",
+    },
+    {
+      title: "Portfolio",
+      desc: "My personal portfolio built with React, animations and theme switching.",
+      link: "https://yagnesh471.github.io/myportfolio/",
+    },
+  ];
+
   const typeLine = (text, setter, speed = 120) => {
     return new Promise((resolve) => {
       let i = 0;
@@ -22,7 +44,7 @@ export default function Portfolio() {
 
         if (i === text.length) {
           clearInterval(interval);
-          resolve(); // move to next line
+          resolve();
         }
       }, speed);
     });
@@ -38,29 +60,67 @@ export default function Portfolio() {
     startTyping();
   }, []);
 
+  useEffect(() => {
+    if (success) {
+      const timer = setTimeout(() => setSuccess(""), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [success]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      setLoading(true);
+      setSuccess("");
+      setErrorMsg("");
+
+      await emailjs.sendForm(
+  import.meta.env.VITE_SERVICE_ID,
+  import.meta.env.VITE_TEMPLATE_ID,
+  e.target,
+  import.meta.env.VITE_PUBLIC_KEY
+);
+
+      setSuccess("Message sent successfully!");
+      e.target.reset();
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      setErrorMsg("Failed to send message. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className={dark ? "app dark" : "app light"}>
-      {/* Background */}
       <div className="bg"></div>
 
-      {/* Navbar */}
       <nav className="navbar">
         <h1 className="logo">MyPortfolio</h1>
 
         <div className="nav-links">
+<<<<<<< HEAD
   <a href="#home">Home</a>
   <a href="#about">About</a>
   <a href="#projects">Projects</a>
   <a href="#profiles">Profiles</a>
   <a href="#contact">Contact</a>
 </div>
+=======
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#profiles">Profiles</a>
+          <a href="#contact">Contact</a>
+        </div>
+>>>>>>> ae1e8e0 (updated UI and gitignore)
 
         <button className="toggle" onClick={() => setDark(!dark)}>
           {dark ? "☀️" : "🌙"}
         </button>
       </nav>
 
-      {/* Hero */}
       <section id="home" className="hero">
         <motion.h1
           initial={{ opacity: 0, y: 50 }}
@@ -77,7 +137,6 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* About */}
       <section id="about" className="about">
         <div>
           <h2>About Me</h2>
@@ -97,24 +156,28 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Projects */}
       <section id="projects" className="projects">
         <h2>Projects</h2>
 
-        <div className="grid">
-          {["Food App", "Weather API", "Portfolio"].map((p, i) => (
-            <motion.div
+        <div className="projects-grid">
+          {projects.map((project, i) => (
+            <motion.a
               key={i}
-              whileHover={{ scale: 1.1, rotate: 2 }}
-              className="card"
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-card"
+              whileHover={{ y: -4 }}
+              whileTap={{ scale: 0.98 }}
             >
-              <h3>{p}</h3>
-              <p>Advanced modern project.</p>
-            </motion.div>
+              <h3>{project.title}</h3>
+              <p>{project.desc}</p>
+            </motion.a>
           ))}
         </div>
       </section>
 
+<<<<<<< HEAD
       {/* Profiles */}
 <section id="profiles" className="profiles">
   <h2>Profiles</h2>
@@ -154,13 +217,63 @@ export default function Portfolio() {
       
 
       {/* Contact */}
+=======
+      <section id="profiles" className="profiles">
+        <h2>Profiles</h2>
+
+        <div className="profiles-grid">
+          <a
+            href="https://www.linkedin.com/in/yagneshwar-reddy-00ba163a3"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="profile-card"
+          >
+            <h3>LinkedIn</h3>
+            <p>Connect with me professionally.</p>
+          </a>
+
+          <a
+            href="https://github.com/yagnesh471"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="profile-card"
+          >
+            <h3>GitHub</h3>
+            <p>Check out my repositories and code.</p>
+          </a>
+
+          <a
+            href="https://leetcode.com/polly55"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="profile-card"
+          >
+            <h3>LeetCode</h3>
+            <p>View my problem-solving profile.</p>
+          </a>
+        </div>
+      </section>
+
+>>>>>>> ae1e8e0 (updated UI and gitignore)
       <section id="contact" className="contact">
         <h2>Contact</h2>
-        <form onSubmit={(e) => e.preventDefault()}>
-          <input placeholder="Name" />
-          <input placeholder="Email" type="email" />
-          <textarea placeholder="Message" />
-          <button type="submit">Send</button>
+
+        <form onSubmit={handleSubmit}>
+          <input type="text" name="user_name" placeholder="Name" required />
+          <input type="email" name="user_email" placeholder="Email" required />
+          <textarea name="message" placeholder="Message" required />
+
+          <button type="submit" disabled={loading}>
+            {loading ? "Sending..." : "Send"}
+          </button>
+
+          {success && (
+            <p style={{ color: "#00ffae", marginTop: "10px" }}>{success}</p>
+          )}
+
+          {errorMsg && (
+            <p style={{ color: "#ff6b6b", marginTop: "10px" }}>{errorMsg}</p>
+          )}
         </form>
       </section>
     </div>

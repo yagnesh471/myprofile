@@ -123,25 +123,62 @@ body {
   gap: 20px;
 }
 
-/* Cards (Soft Hover) */
+/* Cards */
 .card {
   padding: 20px;
   border-radius: 15px;
   background: rgba(255,255,255,0.1);
   backdrop-filter: blur(10px);
   text-align: center;
-
   transition: all 0.25s ease;
 }
 
-/* Subtle Hover */
 .card:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 
-/* Light mode fix */
 .app.light .card {
+  background: white;
+  color: black;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* ================= PROJECTS ================= */
+
+.projects {
+  text-align: center;
+}
+
+.projects h2 {
+  margin-bottom: 30px;
+  font-size: 32px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.project-card {
+  display: block;
+  padding: 25px;
+  border-radius: 15px;
+  text-decoration: none;
+  color: inherit;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.app.light .project-card {
   background: white;
   color: black;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -158,31 +195,25 @@ body {
   font-size: 32px;
 }
 
-/* Form Container */
 .contact form {
   width: 100%;
   max-width: 420px;
   margin: 0 auto;
   padding: 30px 25px;
-
   display: flex;
   flex-direction: column;
   gap: 15px;
-
   border-radius: 20px;
   background: rgba(255,255,255,0.08);
   backdrop-filter: blur(12px);
-
   box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
-/* Light Mode */
 .app.light .contact form {
   background: white;
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
-/* Inputs */
 .contact input,
 .contact textarea {
   width: 100%;
@@ -190,61 +221,55 @@ body {
   border-radius: 12px;
   border: none;
   outline: none;
-
   font-size: 14px;
   background: rgba(255,255,255,0.9);
   color: #111;
-
   transition: all 0.25s ease;
 }
 
-/* Placeholder */
 .contact input::placeholder,
 .contact textarea::placeholder {
   color: #777;
 }
 
-/* Focus Effect */
 .contact input:focus,
 .contact textarea:focus {
   box-shadow: 0 0 0 2px #e100ff, 0 0 12px rgba(225, 0, 255, 0.4);
 }
 
-/* Textarea */
 .contact textarea {
   min-height: 110px;
   resize: none;
 }
 
-/* Button */
 .contact button {
   width: 100%;
   padding: 14px;
   border-radius: 12px;
   border: none;
-
   font-size: 16px;
   font-weight: 500;
-
   background: linear-gradient(90deg, #7f00ff, #e100ff);
   color: white;
-
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
-/* Hover */
 .contact button:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(225, 0, 255, 0.5);
 }
 
-/* Click */
 .contact button:active {
   transform: scale(0.97);
 }
 
+<<<<<<< HEAD
 /* Profiles */
+=======
+/* ================= PROFILES ================= */
+
+>>>>>>> ae1e8e0 (updated UI and gitignore)
 .profiles {
   text-align: center;
 }
@@ -282,8 +307,19 @@ body {
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
+<<<<<<< HEAD
 @media (max-width: 768px) {
   .profiles-grid {
     grid-template-columns: 1fr;
   }
 }
+=======
+/* Responsive */
+@media (max-width: 768px) {
+  .profiles-grid,
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+>>>>>>> ae1e8e0 (updated UI and gitignore)
