@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
 import "./App.css";
 
 export default function Portfolio() {
@@ -32,16 +32,19 @@ export default function Portfolio() {
       desc: "My personal portfolio built with React, animations and theme switching.",
       link: "https://yagnesh471.github.io/myportfolio/",
     },
+    {
+    title: "PathPilot",
+    desc: "AI-powered career roadmap generator with secure user-based history tracking.",
+    link: "https://pathpilot07.netlify.app/", // replace with your actual link
+  },
   ];
 
   const typeLine = (text, setter, speed = 120) => {
     return new Promise((resolve) => {
       let i = 0;
-
       const interval = setInterval(() => {
         setter(text.slice(0, i + 1));
         i++;
-
         if (i === text.length) {
           clearInterval(interval);
           resolve();
@@ -56,7 +59,6 @@ export default function Portfolio() {
       await typeLine(roles[1], setLine2);
       await typeLine(roles[2], setLine3);
     };
-
     startTyping();
   }, []);
 
@@ -69,18 +71,17 @@ export default function Portfolio() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
       setLoading(true);
       setSuccess("");
       setErrorMsg("");
 
       await emailjs.sendForm(
-  import.meta.env.VITE_SERVICE_ID,
-  import.meta.env.VITE_TEMPLATE_ID,
-  e.target,
-  import.meta.env.VITE_PUBLIC_KEY
-);
+        import.meta.env.VITE_SERVICE_ID,
+        import.meta.env.VITE_TEMPLATE_ID,
+        e.target,
+        import.meta.env.VITE_PUBLIC_KEY
+      );
 
       setSuccess("Message sent successfully!");
       e.target.reset();
@@ -100,21 +101,12 @@ export default function Portfolio() {
         <h1 className="logo">MyPortfolio</h1>
 
         <div className="nav-links">
-<<<<<<< HEAD
-  <a href="#home">Home</a>
-  <a href="#about">About</a>
-  <a href="#projects">Projects</a>
-  <a href="#profiles">Profiles</a>
-  <a href="#contact">Contact</a>
-</div>
-=======
           <a href="#home">Home</a>
           <a href="#about">About</a>
           <a href="#projects">Projects</a>
           <a href="#profiles">Profiles</a>
           <a href="#contact">Contact</a>
         </div>
->>>>>>> ae1e8e0 (updated UI and gitignore)
 
         <button className="toggle" onClick={() => setDark(!dark)}>
           {dark ? "☀️" : "🌙"}
@@ -122,11 +114,7 @@ export default function Portfolio() {
       </nav>
 
       <section id="home" className="hero">
-        <motion.h1
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="title"
-        >
+        <motion.h1 initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} className="title">
           Hi, I'm Tyr
         </motion.h1>
 
@@ -143,17 +131,18 @@ export default function Portfolio() {
           <p>I build modern web apps and analyze data.</p>
         </div>
 
-        <div className="skills" style={{ perspective: 1000 }}>
-          {["React", "Node.js", "Python", "C++"].map((s, i) => (
-            <motion.div
-              key={i}
-              whileHover={{ rotateX: 10, rotateY: 10, scale: 1.1 }}
-              className="card"
-            >
-              {s}
-            </motion.div>
-          ))}
-        </div>
+        <div className="skills">
+  {["React", "Node.js", "Python", "C++"].map((s, i) => (
+    <motion.div
+      key={i}
+      whileHover={{ y: -4 }}
+      whileTap={{ scale: 0.98 }}
+      className="card"
+    >
+      {s}
+    </motion.div>
+  ))}
+</div>
       </section>
 
       <section id="projects" className="projects">
@@ -161,15 +150,7 @@ export default function Portfolio() {
 
         <div className="projects-grid">
           {projects.map((project, i) => (
-            <motion.a
-              key={i}
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="project-card"
-              whileHover={{ y: -4 }}
-              whileTap={{ scale: 0.98 }}
-            >
+            <motion.a key={i} href={project.link} target="_blank" rel="noopener noreferrer" className="project-card">
               <h3>{project.title}</h3>
               <p>{project.desc}</p>
             </motion.a>
@@ -177,84 +158,27 @@ export default function Portfolio() {
         </div>
       </section>
 
-<<<<<<< HEAD
-      {/* Profiles */}
-<section id="profiles" className="profiles">
-  <h2>Profiles</h2>
-
-  <div className="profiles-grid">
-    <a
-      href="https://www.linkedin.com/in/yagneshwar-reddy-00ba163a3?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="profile-card"
-    >
-      <h3>LinkedIn</h3>
-      <p>Connect with me professionally.</p>
-    </a>
-
-    <a
-      href="https://github.com/yagnesh471"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="profile-card"
-    >
-      <h3>GitHub</h3>
-      <p>Check out my repositories and code.</p>
-    </a>
-
-    <a
-      href="https://leetcode.com/polly55"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="profile-card"
-    >
-      <h3>LeetCode</h3>
-      <p>View my problem-solving profile.</p>
-    </a>
-  </div>
-</section>
-      
-
-      {/* Contact */}
-=======
       <section id="profiles" className="profiles">
         <h2>Profiles</h2>
 
         <div className="profiles-grid">
-          <a
-            href="https://www.linkedin.com/in/yagneshwar-reddy-00ba163a3"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="profile-card"
-          >
+          <a href="https://www.linkedin.com/in/yagneshwar-reddy-00ba163a3" target="_blank" className="profile-card">
             <h3>LinkedIn</h3>
             <p>Connect with me professionally.</p>
           </a>
 
-          <a
-            href="https://github.com/yagnesh471"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="profile-card"
-          >
+          <a href="https://github.com/yagnesh471" target="_blank" className="profile-card">
             <h3>GitHub</h3>
-            <p>Check out my repositories and code.</p>
+            <p>Check out my repositories.</p>
           </a>
 
-          <a
-            href="https://leetcode.com/polly55"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="profile-card"
-          >
+          <a href="https://leetcode.com/polly55" target="_blank" className="profile-card">
             <h3>LeetCode</h3>
-            <p>View my problem-solving profile.</p>
+            <p>View my problem solving.</p>
           </a>
         </div>
       </section>
 
->>>>>>> ae1e8e0 (updated UI and gitignore)
       <section id="contact" className="contact">
         <h2>Contact</h2>
 
@@ -267,13 +191,8 @@ export default function Portfolio() {
             {loading ? "Sending..." : "Send"}
           </button>
 
-          {success && (
-            <p style={{ color: "#00ffae", marginTop: "10px" }}>{success}</p>
-          )}
-
-          {errorMsg && (
-            <p style={{ color: "#ff6b6b", marginTop: "10px" }}>{errorMsg}</p>
-          )}
+          {success && <p style={{ color: "#00ffae" }}>{success}</p>}
+          {errorMsg && <p style={{ color: "#ff6b6b" }}>{errorMsg}</p>}
         </form>
       </section>
     </div>
