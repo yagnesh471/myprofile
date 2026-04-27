@@ -30,7 +30,7 @@ export default function Portfolio() {
     {
       title: "Portfolio",
       desc: "My personal portfolio built with React, animations and theme switching.",
-      link: "https://yagnesh471.github.io/myportfolio/",
+      link: "https://myportfoliotyr.netlify.app/",
     },
     {
     title: "PathPilot",
@@ -115,7 +115,7 @@ export default function Portfolio() {
 
       <section id="home" className="hero">
         <motion.h1 initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} className="title">
-          Hi, I'm Tyr
+          Hi, I'm Yagnesh
         </motion.h1>
 
         <div className="typing">
