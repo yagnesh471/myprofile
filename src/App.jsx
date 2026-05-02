@@ -14,7 +14,7 @@ export default function Portfolio() {
   const [success, setSuccess] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
 
-  const roles = ["Data Analyst", "Backend Developer"];
+  const roles = ["Backend Developer","Data Analyst","React developer"];
 
   const projects = [
     {
@@ -128,7 +128,7 @@ export default function Portfolio() {
       <section id="about" className="about">
         <div>
           <h2>About Me</h2>
-          <p>I build modern web apps and analyze data.</p>
+          <p>Backend Developer skilled in Node.js and MongoDB, with a strong interest in data analysis and building efficient, real-world applications.</p>
         </div>
 
         <div className="skills">
