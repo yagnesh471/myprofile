@@ -14,7 +14,7 @@ export default function Portfolio() {
   const [success, setSuccess] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
 
-  const roles = ["Web Developer", "Data Analyst", "React Developer"];
+  const roles = ["Data Analyst", "Backend Developer"];
 
   const projects = [
     {
@@ -132,7 +132,7 @@ export default function Portfolio() {
         </div>
 
         <div className="skills">
-  {["React", "Node.js", "Python", "C++"].map((s, i) => (
+  {["HTML5","CSS3","JavaScript","Node.js","Express.js","React","SQL","MongoDB","C","Python", "C++","Java"].map((s, i) => (
     <motion.div
       key={i}
       whileHover={{ y: -4 }}
