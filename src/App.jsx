@@ -14,18 +14,18 @@ export default function Portfolio() {
   const [success, setSuccess] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
 
-  const roles = ["Backend Developer","Data Analyst","React developer"];
+  const roles = ["Backend Developer","Data Analyst"];
 
   const projects = [
     {
       title: "Online Food Delivery",
       desc: "A full stack food ordering web app with login, cart, payment and tracking.",
-      link: "https://transcendent-kataifi-a749b4.netlify.app/",
+      link: "https://foodrush07.netlify.app/",
     },
     {
       title: "Weather API",
       desc: "A weather monitoring app using API integration and dynamic UI updates.",
-      link: "https://your-weather-project-link.com",
+      link: "https://yagnesh471.github.io/weather-moniter/",
     },
     {
       title: "Portfolio",
@@ -35,7 +35,12 @@ export default function Portfolio() {
     {
     title: "PathPilot",
     desc: "AI-powered career roadmap generator with secure user-based history tracking.",
-    link: "https://pathpilot07.netlify.app/", // replace with your actual link
+    link: "https://pathpilot07.netlify.app/",
+  },
+    {
+    title: "Stopwatch",
+    desc: "Responsive stopwatch web app using HTML,CSS and JavaScriot",
+    link: "https://yagnesh471.github.io/stopwatchX/",
   },
   ];
 
@@ -174,7 +179,7 @@ export default function Portfolio() {
 
           <a href="https://leetcode.com/polly55" target="_blank" className="profile-card">
             <h3>LeetCode</h3>
-            <p>View my problem solving.</p>
+            <p>View my problem solving😅.</p>
           </a>
         </div>
       </section>
