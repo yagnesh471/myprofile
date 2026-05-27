@@ -23,11 +23,6 @@ export default function Portfolio() {
       link: "https://foodrush07.netlify.app/",
     },
     {
-      title: "Weather API",
-      desc: "A weather monitoring app using API integration and dynamic UI updates.",
-      link: "https://yagnesh471.github.io/weather-moniter/",
-    },
-    {
       title: "Portfolio",
       desc: "My personal portfolio built with React, animations and theme switching.",
       link: "https://myportfoliotyr.netlify.app/",
@@ -37,11 +32,17 @@ export default function Portfolio() {
     desc: "AI-powered career roadmap generator with secure user-based history tracking.",
     link: "https://pathpilot07.netlify.app/",
   },
-    {
+     {
     title: "Stopwatch",
     desc: "Responsive stopwatch web app using HTML,CSS and JavaScriot",
     link: "https://yagnesh471.github.io/stopwatch/",
   },
+    {
+      title: "Weather API",
+      desc: "A weather monitoring app using API integration and dynamic UI updates.",
+      link: "https://yagnesh471.github.io/weather-moniter/",
+    },
+   
   ];
 
   const typeLine = (text, setter, speed = 120) => {
@@ -137,7 +138,7 @@ export default function Portfolio() {
         </div>
 
         <div className="skills">
-  {["HTML5","CSS3","JavaScript","Node.js","Express.js","React","SQL","MongoDB","C","Python", "C++","Java"].map((s, i) => (
+  {["HTML5","CSS3","JavaScript","Node.js","Express.js","React","SQL","MongoDB","C","Python", "C++","Java","Git"].map((s, i) => (
     <motion.div
       key={i}
       whileHover={{ y: -4 }}
@@ -179,7 +180,7 @@ export default function Portfolio() {
 
           <a href="https://leetcode.com/polly55" target="_blank" className="profile-card">
             <h3>LeetCode</h3>
-            <p>View my problem solving😅.</p>
+            <p>View my problem solving skills😅.</p>
           </a>
         </div>
       </section>
