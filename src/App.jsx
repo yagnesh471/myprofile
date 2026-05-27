@@ -40,7 +40,7 @@ export default function Portfolio() {
     {
     title: "Stopwatch",
     desc: "Responsive stopwatch web app using HTML,CSS and JavaScriot",
-    link: "https://yagnesh471.github.io/stopwatchX/",
+    link: "https://yagnesh471.github.io/stopwatch/",
   },
   ];
 
