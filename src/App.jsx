@@ -32,7 +32,7 @@ export default function Portfolio() {
     desc: "AI-powered career roadmap generator with secure user-based history tracking.",
     link: "https://pathpilot07.netlify.app/",
   },
-     {
+    /* {
     title: "Stopwatch",
     desc: "Responsive stopwatch web app using HTML,CSS and JavaScriot",
     link: "https://yagnesh471.github.io/stopwatch/",
@@ -42,7 +42,7 @@ export default function Portfolio() {
       desc: "A weather monitoring app using API integration and dynamic UI updates.",
       link: "https://yagnesh471.github.io/weather-moniter/",
     },
-   
+   */
   ];
 
   const typeLine = (text, setter, speed = 120) => {
