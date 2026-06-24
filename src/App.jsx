@@ -33,20 +33,17 @@ export default function Portfolio() {
   const projects = [
     {
       title: "Online Food Delivery",
-      desc:
-        "A full stack food ordering web app with login, cart, payment and tracking.",
+      desc: "A full stack food ordering web app with login, cart, payment and tracking.",
       link: "https://foodrush07.netlify.app/",
     },
     {
       title: "Portfolio",
-      desc:
-        "My personal portfolio built with React, animations and theme switching.",
+      desc: "My personal portfolio built with React and animations.",
       link: "https://myportfoliotyr.netlify.app/",
     },
     {
       title: "PathPilot",
-      desc:
-        "AI-powered career roadmap generator with secure user-based history tracking.",
+      desc: "AI-powered career roadmap generator with secure history tracking.",
       link: "https://pathpilot07.netlify.app/",
     },
   ];
@@ -72,7 +69,6 @@ export default function Portfolio() {
   const typeLine = (text, setter, speed = 120) => {
     return new Promise((resolve) => {
       let i = 0;
-
       const interval = setInterval(() => {
         setter(text.slice(0, i + 1));
         i++;
@@ -119,7 +115,6 @@ export default function Portfolio() {
       setSuccess("Message sent successfully!");
       e.target.reset();
     } catch (error) {
-      console.error(error);
       setErrorMsg("Failed to send message. Please try again.");
     } finally {
       setLoading(false);
@@ -130,7 +125,6 @@ export default function Portfolio() {
     <div className={dark ? "app dark" : "app light"}>
       <div className="bg"></div>
 
-      {/* Navbar */}
       <nav className="navbar">
         <h1 className="logo">MyPortfolio</h1>
 
@@ -147,7 +141,6 @@ export default function Portfolio() {
         </button>
       </nav>
 
-      {/* Hero */}
       <section id="home" className="hero">
         <motion.h1
           className="title"
@@ -163,17 +156,16 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* About */}
       <section id="about" className="about">
         <h2>About Me</h2>
 
         <p>
-          Backend Developer skilled in Node.js and MongoDB, with a strong
-          interest in data analysis and building efficient, real-world
-          applications.
+          Backend Developer skilled in Node.js and MongoDB, with a
+          strong interest in data analysis and building efficient,
+          real-world applications.
         </p>
 
-        <h2 style={{ marginTop: "50px" }}>Skills</h2>
+        <h2 style={{ marginTop: "60px" }}>Skills</h2>
 
         <div className="skills-grid">
           {skills.map((skill, index) => (
@@ -188,7 +180,6 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Projects */}
       <section id="projects" className="projects">
         <h2>Projects</h2>
 
@@ -206,16 +197,15 @@ export default function Portfolio() {
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="card-btn"
+                className="card-link"
               >
-                Open
+                Open →
               </a>
             </motion.div>
           ))}
         </div>
       </section>
 
-      {/* Profiles */}
       <section id="profiles" className="profiles">
         <h2>Profiles</h2>
 
@@ -233,16 +223,15 @@ export default function Portfolio() {
                 href={profile.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="card-btn"
+                className="card-link"
               >
-                Open
+                Open →
               </a>
             </motion.div>
           ))}
         </div>
       </section>
 
-      {/* Contact */}
       <section id="contact" className="contact">
         <h2>Contact</h2>
 
@@ -271,13 +260,8 @@ export default function Portfolio() {
             {loading ? "Sending..." : "Send"}
           </button>
 
-          {success && (
-            <p style={{ color: "#00ffae" }}>{success}</p>
-          )}
-
-          {errorMsg && (
-            <p style={{ color: "#ff6b6b" }}>{errorMsg}</p>
-          )}
+          {success && <p style={{ color: "#00ffae" }}>{success}</p>}
+          {errorMsg && <p style={{ color: "#ff6b6b" }}>{errorMsg}</p>}
         </form>
       </section>
     </div>
