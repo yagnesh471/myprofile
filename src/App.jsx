@@ -1,3 +1,4 @@
+```jsx
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
@@ -8,49 +9,76 @@ export default function Portfolio() {
 
   const [line1, setLine1] = useState("");
   const [line2, setLine2] = useState("");
-  const [line3, setLine3] = useState("");
 
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
 
-  const roles = ["Backend Developer","Data Analyst"];
+  const roles = ["Backend Developer", "Data Analyst"];
 
   const projects = [
     {
       title: "Online Food Delivery",
-      desc: "A full stack food ordering web app with login, cart, payment and tracking.",
+      desc:
+        "A full stack food ordering web app with login, cart, payment and tracking.",
       link: "https://foodrush07.netlify.app/",
     },
     {
       title: "Portfolio",
-      desc: "My personal portfolio built with React, animations and theme switching.",
+      desc:
+        "My personal portfolio built with React, animations and theme switching.",
       link: "https://myportfoliotyr.netlify.app/",
     },
     {
-    title: "PathPilot",
-    desc: "AI-powered career roadmap generator with secure user-based history tracking.",
-    link: "https://pathpilot07.netlify.app/",
-  },
-    /* {
-    title: "Stopwatch",
-    desc: "Responsive stopwatch web app using HTML,CSS and JavaScriot",
-    link: "https://yagnesh471.github.io/stopwatch/",
-  },
-    {
-      title: "Weather API",
-      desc: "A weather monitoring app using API integration and dynamic UI updates.",
-      link: "https://yagnesh471.github.io/weather-moniter/",
+      title: "PathPilot",
+      desc:
+        "AI-powered career roadmap generator with secure user-based history tracking.",
+      link: "https://pathpilot07.netlify.app/",
     },
-   */
+  ];
+
+  const skills = [
+    "HTML5",
+    "CSS3",
+    "JavaScript",
+    "React",
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "SQL",
+    "Python",
+    "Java",
+    "C++",
+    "Git",
+  ];
+
+  const profiles = [
+    {
+      title: "LinkedIn",
+      desc: "Connect with me professionally.",
+      link:
+        "https://www.linkedin.com/in/yagneshwar-reddy-00ba163a3",
+    },
+    {
+      title: "GitHub",
+      desc: "Check out my repositories.",
+      link: "https://github.com/yagnesh471",
+    },
+    {
+      title: "LeetCode",
+      desc: "View my problem solving skills 😅.",
+      link: "https://leetcode.com/polly55",
+    },
   ];
 
   const typeLine = (text, setter, speed = 120) => {
     return new Promise((resolve) => {
       let i = 0;
+
       const interval = setInterval(() => {
         setter(text.slice(0, i + 1));
         i++;
+
         if (i === text.length) {
           clearInterval(interval);
           resolve();
@@ -63,8 +91,8 @@ export default function Portfolio() {
     const startTyping = async () => {
       await typeLine(roles[0], setLine1);
       await typeLine(roles[1], setLine2);
-      await typeLine(roles[2], setLine3);
     };
+
     startTyping();
   }, []);
 
@@ -77,6 +105,7 @@ export default function Portfolio() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     try {
       setLoading(true);
       setSuccess("");
@@ -92,7 +121,7 @@ export default function Portfolio() {
       setSuccess("Message sent successfully!");
       e.target.reset();
     } catch (error) {
-      console.error("EmailJS Error:", error);
+      console.error(error);
       setErrorMsg("Failed to send message. Please try again.");
     } finally {
       setLoading(false);
@@ -103,6 +132,7 @@ export default function Portfolio() {
     <div className={dark ? "app dark" : "app light"}>
       <div className="bg"></div>
 
+      {/* Navbar */}
       <nav className="navbar">
         <h1 className="logo">MyPortfolio</h1>
 
@@ -114,91 +144,145 @@ export default function Portfolio() {
           <a href="#contact">Contact</a>
         </div>
 
-        <button className="toggle" onClick={() => setDark(!dark)}>
+        <button
+          className="toggle"
+          onClick={() => setDark(!dark)}
+        >
           {dark ? "☀️" : "🌙"}
         </button>
       </nav>
 
+      {/* Hero */}
       <section id="home" className="hero">
-        <motion.h1 initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} className="title">
+        <motion.h1
+          className="title"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+        >
           Hi, I'm Yagnesh
         </motion.h1>
 
         <div className="typing">
           <div>{line1}</div>
           <div>{line2}</div>
-          <div>{line3}</div>
         </div>
       </section>
 
+      {/* About */}
       <section id="about" className="about">
-        <div>
-          <h2>About Me</h2>
-          <p>Backend Developer skilled in Node.js and MongoDB, with a strong interest in data analysis and building efficient, real-world applications.</p>
-        </div>
+        <h2>About Me</h2>
 
-        <div className="skills">
-  {["HTML5","CSS3","JavaScript","Node.js","Express.js","React","SQL","MongoDB","C","Python", "C++","Java","Git"].map((s, i) => (
-    <motion.div
-      key={i}
-      whileHover={{ y: -4 }}
-      whileTap={{ scale: 0.98 }}
-      className="card"
-    >
-      {s}
-    </motion.div>
-  ))}
-</div>
-      </section>
+        <p>
+          Backend Developer skilled in Node.js and MongoDB,
+          with a strong interest in data analysis and building
+          efficient, real-world applications.
+        </p>
 
-      <section id="projects" className="projects">
-        <h2>Projects</h2>
+        <h2 style={{ marginTop: "60px" }}>Skills</h2>
 
-        <div className="projects-grid">
-          {projects.map((project, i) => (
-            <motion.a key={i} href={project.link} target="_blank" rel="noopener noreferrer" className="project-card">
-              <h3>{project.title}</h3>
-              <p>{project.desc}</p>
-            </motion.a>
+        <div className="skills-grid">
+          {skills.map((skill, index) => (
+            <motion.div
+              key={index}
+              className="skill-card"
+              whileHover={{ y: -4 }}
+            >
+              <h3>{skill}</h3>
+            </motion.div>
           ))}
         </div>
       </section>
 
+      {/* Projects */}
+      <section id="projects" className="projects">
+        <h2>Projects</h2>
+
+        <div className="projects-grid">
+          {projects.map((project, index) => (
+            <motion.div
+              key={index}
+              className="project-card"
+              whileHover={{ y: -4 }}
+            >
+              <h3>{project.title}</h3>
+              <p>{project.desc}</p>
+
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card-btn"
+              >
+                Open
+              </a>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* Profiles */}
       <section id="profiles" className="profiles">
         <h2>Profiles</h2>
 
         <div className="profiles-grid">
-          <a href="https://www.linkedin.com/in/yagneshwar-reddy-00ba163a3" target="_blank" className="profile-card">
-            <h3>LinkedIn</h3>
-            <p>Connect with me professionally.</p>
-          </a>
+          {profiles.map((profile, index) => (
+            <motion.div
+              key={index}
+              className="profile-card"
+              whileHover={{ y: -4 }}
+            >
+              <h3>{profile.title}</h3>
+              <p>{profile.desc}</p>
 
-          <a href="https://github.com/yagnesh471" target="_blank" className="profile-card">
-            <h3>GitHub</h3>
-            <p>Check out my repositories.</p>
-          </a>
-
-          <a href="https://leetcode.com/polly55" target="_blank" className="profile-card">
-            <h3>LeetCode</h3>
-            <p>View my problem solving skills😅.</p>
-          </a>
+              <a
+                href={profile.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card-btn"
+              >
+                Open
+              </a>
+            </motion.div>
+          ))}
         </div>
       </section>
 
+      {/* Contact */}
       <section id="contact" className="contact">
         <h2>Contact</h2>
 
         <form onSubmit={handleSubmit}>
-          <input type="text" name="user_name" placeholder="Name" required />
-          <input type="email" name="user_email" placeholder="Email" required />
-          <textarea name="message" placeholder="Message" required />
+          <input
+            type="text"
+            name="user_name"
+            placeholder="Name"
+            required
+          />
+
+          <input
+            type="email"
+            name="user_email"
+            placeholder="Email"
+            required
+          />
+
+          <textarea
+            name="message"
+            placeholder="Message"
+            required
+          />
 
           <button type="submit" disabled={loading}>
             {loading ? "Sending..." : "Send"}
           </button>
 
-          {success && <p style={{ color: "#00ffae" }}>{success}</p>}
-          {errorMsg && <p style={{ color: "#ff6b6b" }}>{errorMsg}</p>}
+          {success && (
+            <p style={{ color: "#00ffae" }}>{success}</p>
+          )}
+
+          {errorMsg && (
+            <p style={{ color: "#ff6b6b" }}>{errorMsg}</p>
+          )}
         </form>
       </section>
     </div>
