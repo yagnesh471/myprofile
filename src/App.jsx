@@ -1,4 +1,3 @@
-```jsx
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
@@ -15,6 +14,21 @@ export default function Portfolio() {
   const [errorMsg, setErrorMsg] = useState("");
 
   const roles = ["Backend Developer", "Data Analyst"];
+
+  const skills = [
+    "HTML5",
+    "CSS3",
+    "JavaScript",
+    "React",
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "SQL",
+    "Python",
+    "Java",
+    "C++",
+    "Git",
+  ];
 
   const projects = [
     {
@@ -37,27 +51,11 @@ export default function Portfolio() {
     },
   ];
 
-  const skills = [
-    "HTML5",
-    "CSS3",
-    "JavaScript",
-    "React",
-    "Node.js",
-    "Express.js",
-    "MongoDB",
-    "SQL",
-    "Python",
-    "Java",
-    "C++",
-    "Git",
-  ];
-
   const profiles = [
     {
       title: "LinkedIn",
       desc: "Connect with me professionally.",
-      link:
-        "https://www.linkedin.com/in/yagneshwar-reddy-00ba163a3",
+      link: "https://www.linkedin.com/in/yagneshwar-reddy-00ba163a3",
     },
     {
       title: "GitHub",
@@ -144,10 +142,7 @@ export default function Portfolio() {
           <a href="#contact">Contact</a>
         </div>
 
-        <button
-          className="toggle"
-          onClick={() => setDark(!dark)}
-        >
+        <button className="toggle" onClick={() => setDark(!dark)}>
           {dark ? "☀️" : "🌙"}
         </button>
       </nav>
@@ -173,12 +168,12 @@ export default function Portfolio() {
         <h2>About Me</h2>
 
         <p>
-          Backend Developer skilled in Node.js and MongoDB,
-          with a strong interest in data analysis and building
-          efficient, real-world applications.
+          Backend Developer skilled in Node.js and MongoDB, with a strong
+          interest in data analysis and building efficient, real-world
+          applications.
         </p>
 
-        <h2 style={{ marginTop: "60px" }}>Skills</h2>
+        <h2 style={{ marginTop: "50px" }}>Skills</h2>
 
         <div className="skills-grid">
           {skills.map((skill, index) => (
