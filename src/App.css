@@ -123,12 +123,6 @@ body {
 .profiles,
 .contact {
   padding: 80px 40px;
-}
-
-.about,
-.projects,
-.profiles,
-.contact {
   text-align: center;
 }
 
@@ -138,6 +132,13 @@ body {
 .contact h2 {
   margin-bottom: 30px;
   font-size: 34px;
+}
+
+.about p {
+  max-width: 800px;
+  margin: auto;
+  line-height: 1.7;
+  font-size: 18px;
 }
 
 /* ================= SKILLS ================= */
@@ -150,22 +151,22 @@ body {
 }
 
 .skill-card {
-  padding: 25px;
+  padding: 30px;
   border-radius: 15px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255,255,255,0.1);
   backdrop-filter: blur(10px);
   transition: all 0.25s ease;
 }
 
 .skill-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
 .app.light .skill-card {
   background: white;
   color: black;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 /* ================= PROJECTS ================= */
@@ -179,20 +180,20 @@ body {
 .project-card {
   padding: 25px;
   border-radius: 15px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255,255,255,0.1);
   backdrop-filter: blur(10px);
   transition: all 0.25s ease;
 }
 
 .project-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
 .app.light .project-card {
   background: white;
   color: black;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 /* ================= PROFILES ================= */
@@ -206,38 +207,43 @@ body {
 .profile-card {
   padding: 25px;
   border-radius: 15px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255,255,255,0.1);
   backdrop-filter: blur(10px);
   transition: all 0.25s ease;
 }
 
 .profile-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
 .app.light .profile-card {
   background: white;
   color: black;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-/* ================= BUTTON ================= */
+/* ================= OPEN BUTTON ================= */
 
-.card-btn {
+.card-link {
   display: inline-block;
   margin-top: 20px;
-  padding: 10px 20px;
+  padding: 10px 22px;
   border-radius: 10px;
   text-decoration: none;
-  background: linear-gradient(90deg, #7f00ff, #e100ff);
   color: white;
-  transition: 0.3s;
+  font-weight: 500;
+  background: linear-gradient(90deg, #7f00ff, #e100ff);
+  transition: all 0.3s ease;
 }
 
-.card-btn:hover {
+.card-link:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(225, 0, 255, 0.4);
+}
+
+.card-link:active {
+  transform: scale(0.97);
 }
 
 /* ================= CONTACT ================= */
@@ -251,13 +257,13 @@ body {
   flex-direction: column;
   gap: 15px;
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255,255,255,0.08);
   backdrop-filter: blur(12px);
 }
 
 .app.light .contact form {
   background: white;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
 .contact input,
@@ -286,7 +292,7 @@ body {
 }
 
 .contact button:hover {
-  box-shadow: 0 8px 20px rgba(225, 0, 255, 0.5);
+  box-shadow: 0 8px 20px rgba(225,0,255,0.5);
 }
 
 /* ================= RESPONSIVE ================= */
