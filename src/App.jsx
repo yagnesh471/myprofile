@@ -165,7 +165,9 @@ export default function Portfolio() {
           strong interest in data analysis and building efficient,
           real-world applications.
         </p>
+      </section>
 
+      <section id="skills" className="skills">
         <h2 style={{ marginTop: "60px" }}>Skills</h2>
 
         <div className="skills-grid">
