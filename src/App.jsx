@@ -24,7 +24,7 @@ export default function Portfolio() {
     "Express.js",
     "MongoDB",
     "SQL",
-    "Python",
+    "Python3",
     "Java",
     "C++",
     "Git",
