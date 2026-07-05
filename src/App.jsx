@@ -267,6 +267,33 @@ export default function Portfolio() {
           {errorMsg && <p style={{ color: "#ff6b6b" }}>{errorMsg}</p>}
         </form>
       </section>
+      <footer className="footer">
+  <h3>Other Contact Details</h3>
+
+  <p>📞 +91 7671904792</p>
+
+  <p>
+    📧{" "}
+    <a href="mailto:yagnesh471@gmail.com">
+      yagnesh471@ gmail.com
+    </a>
+  </p>
+
+  <p>
+    📷{" "}
+    <a
+      href="https://instagram.com/yagnesh_.471"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      @yagnesh_.471
+    </a>
+  </p>
+
+  <p className="copyright">
+    © 2026 yagnesh. All Rights Reserved.
+  </p>
+</footer>
     </div>
   );
 }
