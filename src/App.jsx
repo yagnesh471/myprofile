@@ -268,7 +268,7 @@ export default function Portfolio() {
         </form>
       </section>
       <footer className="footer">
-  <h3>Other Contact Details</h3>
+  <h3>Contact Details</h3>
 
   <p>
   📞{" "}
@@ -276,7 +276,19 @@ export default function Portfolio() {
     +91 76719 04792
   </a>
 </p>
+        
+<p>
+  💬{" "}
+  <a
+    href="https://wa.me/7671904792"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    WhatsApp
+  </a>
+</p>
 
+</p>
   <p>
     📧{" "}
     <a href="mailto:yagnesh471@gmail.com">
