@@ -270,7 +270,12 @@ export default function Portfolio() {
       <footer className="footer">
   <h3>Other Contact Details</h3>
 
-  <p>📞 +91 7671904792</p>
+  <p>
+  📞{" "}
+  <a href="tel:+917671904792">
+    +91 76719 04792
+  </a>
+</p>
 
   <p>
     📧{" "}
