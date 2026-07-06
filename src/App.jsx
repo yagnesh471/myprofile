@@ -287,8 +287,6 @@ export default function Portfolio() {
     WhatsApp
   </a>
 </p>
-
-</p>
   <p>
     📧{" "}
     <a href="mailto:yagnesh471@gmail.com">
