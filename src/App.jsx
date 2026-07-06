@@ -292,12 +292,12 @@ export default function Portfolio() {
   <p>
     📧{" "}
     <a href="mailto:yagnesh471@gmail.com">
-      yagnesh471@ gmail.com
+      yagnesh471@gmail.com
     </a>
   </p>
 
   <p>
-    📷{" "}
+    ig{" "}
     <a
       href="https://instagram.com/yagnesh_.471"
       target="_blank"
