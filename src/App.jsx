@@ -62,7 +62,7 @@ export default function Portfolio() {
     {
       title: "LeetCode",
       desc: "View my problem solving skills 😅.",
-      link: "https://leetcode.com/polly55",
+      link: "https://leetcode.com/241fa04562",
     },
   ];
 
