@@ -61,8 +61,13 @@ export default function Portfolio() {
     },
     {
       title: "LeetCode",
-      desc: "View my problem solving skills 😅.",
+      desc: "View my problem solving skills.",
       link: "https://leetcode.com/241fa04562",
+    },
+    {
+      title: "CodeChef",
+      desc: "View my problem solving skills.",
+      link: "https://www.codechef.com/users/vu2_241fa04562",
     },
   ];
 
