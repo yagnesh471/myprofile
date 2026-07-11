@@ -66,9 +66,18 @@ export default function Portfolio() {
     },
     {
       title: "CodeChef",
-      desc: "View my problem solving skills.",
       link: "https://www.codechef.com/users/vu2_241fa04562",
     },
+    
+    {
+      title: "hackerearth",
+      link: "https://www.hackerearth.com/@yagneshwar2/",
+    },
+    {
+      title: "hackerrank",
+      link: "https://www.hackerrank.com/profile/vu_241fa04562",
+    },
+    
   ];
 
   const typeLine = (text, setter, speed = 120) => {
