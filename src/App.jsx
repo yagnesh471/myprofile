@@ -284,7 +284,7 @@ export default function Portfolio() {
     target="_blank"
     rel="noopener noreferrer"
   >
-    WhatsApp
+    7671904792
   </a>
 </p>
   <p>
@@ -295,7 +295,7 @@ export default function Portfolio() {
   </p>
 
   <p>
-    ig{" "}
+    ig:{" "}
     <a
       href="https://instagram.com/yagnesh_.471"
       target="_blank"
