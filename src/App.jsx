@@ -487,11 +487,7 @@ export default function Portfolio() {
 
           <ul>
 
-            <li>Backend Development</li>
-
             <li>Full Stack Web Apps</li>
-
-            <li>REST API Development</li>
 
             <li>Database Design</li>
 
@@ -511,13 +507,9 @@ export default function Portfolio() {
 
           <ul>
 
-            <li>Spring Boot</li>
-
             <li>System Design</li>
 
             <li>Advanced DSA</li>
-
-            <li>Microservices</li>
 
             <li>Cloud Deployment</li>
 
@@ -535,7 +527,7 @@ export default function Portfolio() {
           className="highlight-card"
           whileHover={{ scale: 1.05 }}
         >
-          <h2>300+</h2>
+          <h2>100+</h2>
 
           <span>LeetCode Problems Solved</span>
 
@@ -545,7 +537,7 @@ export default function Portfolio() {
           className="highlight-card"
           whileHover={{ scale: 1.05 }}
         >
-          <h2>6+</h2>
+          <h2>3+</h2>
 
           <span>Projects Completed</span>
 
@@ -555,7 +547,7 @@ export default function Portfolio() {
           className="highlight-card"
           whileHover={{ scale: 1.05 }}
         >
-          <h2>12+</h2>
+          <h2>6+</h2>
 
           <span>Technologies Used</span>
 
@@ -632,7 +624,7 @@ export default function Portfolio() {
 
       </div>
 
-      {/* ================= Core Expertise ================= */}
+      {/* ================= Core Expertise =================
 
       <div className="expertise">
 
@@ -709,7 +701,7 @@ export default function Portfolio() {
 
       </div>
 
-    </section>
+    </section>  ================ */}
 
         {/* ================= Projects ================= */}
 
@@ -869,7 +861,7 @@ export default function Portfolio() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
-        Coding Profiles
+        Profiles
       </motion.h2>
 
       <motion.p
@@ -945,22 +937,18 @@ export default function Portfolio() {
         <div className="achievement-grid">
 
           <div className="achievement-card">
-            <h2>300+</h2>
+            <h2>100+</h2>
             <p>LeetCode Problems Solved</p>
           </div>
 
-          <div className="achievement-card">
-            <h2>100+</h2>
-            <p>Medium Problems</p>
-          </div>
 
           <div className="achievement-card">
-            <h2>6+</h2>
+            <h2>3+</h2>
             <p>Projects Built</p>
           </div>
 
           <div className="achievement-card">
-            <h2>12+</h2>
+            <h2>6+</h2>
             <p>Technologies Used</p>
           </div>
 
@@ -1124,6 +1112,9 @@ export default function Portfolio() {
 
       <p className="copyright">
         © {new Date().getFullYear()} Yagnesh. All Rights Reserved.
+      </p>
+      <p className="made-by">
+          Built with <span className="heart">❤</span> by Yagnesh
       </p>
 
     </footer>
