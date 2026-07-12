@@ -2236,3 +2236,55 @@ width:100%;
 .heart{
     color:inherit;
 }
+/* ===========================
+        Profiles
+=========================== */
+
+.profiles{
+    text-align:center;
+}
+
+.profiles-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+    margin-top:60px;
+}
+
+.profile-card{
+    background:rgba(255,255,255,.05);
+    border:1px solid var(--border);
+    border-radius:20px;
+    backdrop-filter:blur(18px);
+    padding:35px;
+    transition:.35s;
+    text-align:center;
+}
+
+.profile-card:hover{
+    transform:translateY(-8px);
+    border-color:rgba(139,92,246,.4);
+    box-shadow:0 20px 40px rgba(139,92,246,.2);
+}
+
+.profile-icon{
+    font-size:2.5rem;
+    margin-bottom:20px;
+}
+
+.profile-card h3{
+    margin-bottom:15px;
+}
+
+.profile-card p{
+    margin-bottom:25px;
+}
+
+.profile-btn{
+    display:inline-block;
+    padding:12px 24px;
+    border-radius:12px;
+    background:linear-gradient(135deg,var(--primary),#3b82f6);
+    color:white;
+    font-weight:600;
+}
