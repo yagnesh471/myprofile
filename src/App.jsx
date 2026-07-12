@@ -4,112 +4,264 @@ import emailjs from "@emailjs/browser";
 import "./App.css";
 
 export default function Portfolio() {
+  /* ===========================
+        Theme
+  =========================== */
+
   const [dark, setDark] = useState(true);
 
-  const [line1, setLine1] = useState("");
-  const [line2, setLine2] = useState("");
+  /* ===========================
+        Hero Typing
+  =========================== */
+
+  const roles = [
+    "Backend Developer",
+    "Data Analyst",
+    "AI Enthusiast",
+  ];
+
+  const [currentRole, setCurrentRole] = useState("");
+  const [roleIndex, setRoleIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+
+  /* ===========================
+        Contact Form
+  =========================== */
 
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
 
-  const roles = ["Backend Developer", "Data Analyst"];
+  /* ===========================
+        Statistics
+  =========================== */
 
-  const skills = [
-    "HTML5",
-    "CSS3",
-    "JavaScript",
-    "React",
-    "Node.js",
-    "Express.js",
-    "MongoDB",
-    "SQL",
-    "Python3",
-    "Java",
-    "C++",
-    "Git",
+  const stats = [
+    {
+      number: "300+",
+      label: "LeetCode Problems",
+    },
+    {
+      number: "6+",
+      label: "Projects",
+    },
+    {
+      number: "12+",
+      label: "Technologies",
+    },
+    {
+      number: "2+",
+      label: "Years Learning",
+    },
   ];
+
+  /* ===========================
+        Skills
+  =========================== */
+
+  const skillCategories = [
+    {
+      title: "Frontend",
+      skills: [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "React",
+        "Framer Motion",
+      ],
+    },
+
+    {
+      title: "Backend",
+      skills: [
+        "Node.js",
+        "Express.js",
+        "REST APIs",
+        "JWT Authentication",
+      ],
+    },
+
+    {
+      title: "Databases",
+      skills: [
+        "MongoDB",
+        "SQL",
+      ],
+    },
+
+    {
+      title: "Languages",
+      skills: [
+        "Java",
+        "Python",
+        "C++",
+      ],
+    },
+
+    {
+      title: "Tools",
+      skills: [
+        "Git",
+        "GitHub",
+        "Postman",
+        "Netlify",
+        "Render",
+      ],
+    },
+  ];
+
+  /* ===========================
+        Projects
+  =========================== */
 
   const projects = [
     {
-      title: "Online Food Delivery",
-      desc: "A full stack food ordering web app with login, cart, payment and tracking.",
-      link: "https://foodrush07.netlify.app/",
+      title: "FoodRush",
+
+      subtitle: "Full Stack Food Delivery Platform",
+
+      desc:
+        "A production-ready MERN application featuring authentication, cart management, online ordering, payment flow, admin dashboard, and order tracking.",
+
+      tech: [
+        "React",
+        "Node",
+        "Express",
+        "MongoDB",
+      ],
+
+      live: "https://foodrush07.netlify.app/",
+
+      github: "https://github.com/yagnesh471",
     },
-    {
-      title: "Portfolio",
-      desc: "My personal portfolio built with React and animations.",
-      link: "https://myportfoliotyr.netlify.app/",
-    },
+
     {
       title: "PathPilot",
-      desc: "AI-powered career roadmap generator with secure history tracking.",
-      link: "https://pathpilot07.netlify.app/",
+
+      subtitle: "AI Career Roadmap Generator",
+
+      desc:
+        "An AI-powered platform that generates personalized career roadmaps with secure history tracking and modern UI.",
+
+      tech: [
+        "React",
+        "AI",
+        "Node",
+      ],
+
+      live: "https://pathpilot07.netlify.app/",
+
+      github: "https://github.com/yagnesh471",
+    },
+
+    {
+      title: "Developer Portfolio",
+
+      subtitle: "Responsive React Portfolio",
+
+      desc:
+        "Personal portfolio featuring animations, dark mode, project showcase, EmailJS integration and responsive design.",
+
+      tech: [
+        "React",
+        "CSS",
+        "Framer Motion",
+      ],
+
+      live: "https://myportfoliotyr.netlify.app/",
+
+      github: "https://github.com/yagnesh471",
     },
   ];
+
+  /* ===========================
+        Coding Profiles
+  =========================== */
 
   const profiles = [
     {
-      title: "LinkedIn",
-      desc: "Connect with me professionally.",
-      link: "https://www.linkedin.com/in/yagneshwar-reddy-00ba163a3",
-    },
-    {
       title: "GitHub",
-      desc: "Check out my repositories.",
+      desc: "Explore my repositories and open-source work.",
       link: "https://github.com/yagnesh471",
     },
+
+    {
+      title: "LinkedIn",
+      desc: "Connect with me professionally.",
+      link:
+        "https://www.linkedin.com/in/yagneshwar-reddy-00ba163a3",
+    },
+
     {
       title: "LeetCode",
-      desc: "View my problem solving skills.",
+      desc: "300+ coding problems solved.",
       link: "https://leetcode.com/241fa04562",
     },
+
     {
       title: "CodeChef",
-      link: "https://www.codechef.com/users/vu2_241fa04562",
+      desc: "Competitive programming profile.",
+      link:
+        "https://www.codechef.com/users/vu2_241fa04562",
     },
-    
+
     {
-      title: "hackerearth",
-      link: "https://www.hackerearth.com/@yagneshwar2/",
+      title: "HackerRank",
+      desc: "Programming certifications and practice.",
+      link:
+        "https://www.hackerrank.com/profile/vu_241fa04562",
     },
+
     {
-      title: "hackerrank",
-      link: "https://www.hackerrank.com/profile/vu_241fa04562",
+      title: "HackerEarth",
+      desc: "Coding challenges and contests.",
+      link:
+        "https://www.hackerearth.com/@yagneshwar2/",
     },
-    
   ];
 
-  const typeLine = (text, setter, speed = 120) => {
-    return new Promise((resolve) => {
-      let i = 0;
-      const interval = setInterval(() => {
-        setter(text.slice(0, i + 1));
-        i++;
-
-        if (i === text.length) {
-          clearInterval(interval);
-          resolve();
-        }
-      }, speed);
-    });
-  };
+  /* ===========================
+        Typing Animation
+  =========================== */
 
   useEffect(() => {
-    const startTyping = async () => {
-      await typeLine(roles[0], setLine1);
-      await typeLine(roles[1], setLine2);
-    };
+    const typing = setTimeout(() => {
+      if (charIndex < roles[roleIndex].length) {
+        setCurrentRole(
+          prev => prev + roles[roleIndex][charIndex]
+        );
+        setCharIndex(prev => prev + 1);
+      } else {
+        setTimeout(() => {
+          setCurrentRole("");
+          setCharIndex(0);
+          setRoleIndex(
+            prev => (prev + 1) % roles.length
+          );
+        }, 1500);
+      }
+    }, 90);
 
-    startTyping();
-  }, []);
+    return () => clearTimeout(typing);
+  }, [charIndex, roleIndex]);
+
+  /* ===========================
+        Success Message Timer
+  =========================== */
 
   useEffect(() => {
-    if (success) {
-      const timer = setTimeout(() => setSuccess(""), 3000);
-      return () => clearTimeout(timer);
-    }
+    if (!success) return;
+
+    const timer = setTimeout(() => {
+      setSuccess("");
+    }, 3000);
+
+    return () => clearTimeout(timer);
   }, [success]);
+
+  /* ===========================
+        EmailJS
+  =========================== */
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -126,203 +278,876 @@ export default function Portfolio() {
         import.meta.env.VITE_PUBLIC_KEY
       );
 
-      setSuccess("Message sent successfully!");
       e.target.reset();
-    } catch (error) {
-      setErrorMsg("Failed to send message. Please try again.");
+
+      setSuccess("Message sent successfully!");
+    } catch (err) {
+      setErrorMsg(
+        "Failed to send message. Please try again."
+      );
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div className={dark ? "app dark" : "app light"}>
-      <div className="bg"></div>
+  <div className={dark ? "app dark" : "app light"}>
+    {/* ================= Background ================= */}
 
-      <nav className="navbar">
-        <h1 className="logo">MyPortfolio</h1>
+    <div className="bg"></div>
 
-        <div className="nav-links">
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
-          <a href="#profiles">Profiles</a>
-          <a href="#contact">Contact</a>
-        </div>
+    {/* ================= Navbar ================= */}
 
-        <button className="toggle" onClick={() => setDark(!dark)}>
-          {dark ? "☀️" : "🌙"}
-        </button>
-      </nav>
+    <nav className="navbar">
+      <motion.h1
+        className="logo"
+        whileHover={{ scale: 1.05 }}
+      >
+        MyPortfolio
+      </motion.h1>
 
-      <section id="home" className="hero">
-        <motion.h1
-          className="title"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
+      <div className="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#profiles">Profiles</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <button
+        className="toggle"
+        onClick={() => setDark(!dark)}
+      >
+        {dark ? "☀️" : "🌙"}
+      </button>
+    </nav>
+
+    {/* ================= Hero ================= */}
+
+    <section id="home" className="hero">
+
+      <motion.p
+        className="hero-tag"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}
+      >
+        👋 Welcome to my portfolio
+      </motion.p>
+
+      <motion.h1
+        className="hero-title"
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+      >
+        Hi, I'm <span>Yagnesh</span>
+      </motion.h1>
+
+      <motion.h2
+        className="hero-role"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+      >
+        {currentRole}
+        <span className="cursor">|</span>
+      </motion.h2>
+
+      <motion.p
+        className="hero-desc"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.3 }}
+      >
+        Computer Science student at Vignan University
+        passionate about building modern full-stack
+        applications, extracting insights through data
+        analytics, and developing AI-powered solutions.
+        I enjoy creating scalable software that solves
+        real-world problems.
+      </motion.p>
+
+      {/* ================= Buttons ================= */}
+
+      <div className="hero-buttons">
+
+        <a
+          href="/resume.pdf"
+          className="primary-btn"
+          target="_blank"
         >
-          Hi, I'm Yagnesh
-        </motion.h1>
+          📄 Download Resume
+        </a>
 
-        <div className="typing">
-          <div>{line1}</div>
-          <div>{line2}</div>
+        <a
+          href="#projects"
+          className="secondary-btn"
+        >
+          🚀 View Projects
+        </a>
+
+      </div>
+
+      {/* ================= Stats ================= */}
+
+      <div className="stats-grid">
+
+        {stats.map((item, index) => (
+
+          <motion.div
+            key={index}
+            className="stat-card"
+            whileHover={{
+              scale: 1.05,
+              y: -8
+            }}
+          >
+
+            <h2>{item.number}</h2>
+
+            <p>{item.label}</p>
+
+          </motion.div>
+
+        ))}
+
+      </div>
+
+      {/* ================= Scroll Indicator ================= */}
+
+      <motion.div
+        className="scroll-down"
+        animate={{
+          y: [0, 10, 0]
+        }}
+        transition={{
+          repeat: Infinity,
+          duration: 1.5
+        }}
+      >
+        ↓ Scroll Down
+      </motion.div>
+
+    </section>
+
+        {/* ================= About ================= */}
+
+    <section id="about" className="about">
+
+      <motion.h2
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+      >
+        About Me
+      </motion.h2>
+
+      <motion.p
+        className="about-text"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ delay: 0.2 }}
+        viewport={{ once: true }}
+      >
+        I'm a Computer Science student at Vignan University
+        with a passion for building scalable backend systems,
+        full-stack web applications, and AI-powered solutions.
+
+        I enjoy solving real-world problems through clean,
+        efficient code and continuously expanding my
+        knowledge of modern technologies.
+      </motion.p>
+
+      {/* ================= Info Cards ================= */}
+
+      <div className="about-grid">
+
+        <motion.div
+          className="about-card"
+          whileHover={{ y: -8 }}
+        >
+          <h3>🎓 Education</h3>
+
+          <p>
+            <strong>B.Tech - Computer Science</strong>
+          </p>
+
+          <p>Vignan University</p>
+
+          <p>2024 - 2028</p>
+
+        </motion.div>
+
+        <motion.div
+          className="about-card"
+          whileHover={{ y: -8 }}
+        >
+          <h3>💻 What I Do</h3>
+
+          <ul>
+
+            <li>Backend Development</li>
+
+            <li>Full Stack Web Apps</li>
+
+            <li>REST API Development</li>
+
+            <li>Database Design</li>
+
+            <li>Data Analytics</li>
+
+            <li>AI-powered Applications</li>
+
+          </ul>
+
+        </motion.div>
+
+        <motion.div
+          className="about-card"
+          whileHover={{ y: -8 }}
+        >
+          <h3>🚀 Currently Learning</h3>
+
+          <ul>
+
+            <li>Spring Boot</li>
+
+            <li>System Design</li>
+
+            <li>Advanced DSA</li>
+
+            <li>Microservices</li>
+
+            <li>Cloud Deployment</li>
+
+          </ul>
+
+        </motion.div>
+
+      </div>
+
+      {/* ================= Highlights ================= */}
+
+      <div className="highlights">
+
+        <motion.div
+          className="highlight-card"
+          whileHover={{ scale: 1.05 }}
+        >
+          <h2>300+</h2>
+
+          <span>LeetCode Problems Solved</span>
+
+        </motion.div>
+
+        <motion.div
+          className="highlight-card"
+          whileHover={{ scale: 1.05 }}
+        >
+          <h2>6+</h2>
+
+          <span>Projects Completed</span>
+
+        </motion.div>
+
+        <motion.div
+          className="highlight-card"
+          whileHover={{ scale: 1.05 }}
+        >
+          <h2>12+</h2>
+
+          <span>Technologies Used</span>
+
+        </motion.div>
+
+      </div>
+
+    </section>
+
+        {/* ================= Skills ================= */}
+
+    <section id="skills" className="skills">
+
+      <motion.h2
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+      >
+        Technical Skills
+      </motion.h2>
+
+      <motion.p
+        className="section-desc"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
+        Technologies I use to build scalable applications,
+        modern web experiences, and data-driven solutions.
+      </motion.p>
+
+      <div className="category-grid">
+
+        {skillCategories.map((category, index) => (
+
+          <motion.div
+            key={index}
+            className="category-card"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            whileHover={{
+              y: -10,
+              scale: 1.02
+            }}
+            transition={{
+              duration: 0.4
+            }}
+            viewport={{ once: true }}
+          >
+
+            <h3>{category.title}</h3>
+
+            <div className="skills-list">
+
+              {category.skills.map((skill, i) => (
+
+                <motion.div
+                  key={i}
+                  className="skill-chip"
+                  whileHover={{
+                    scale: 1.08
+                  }}
+                >
+                  {skill}
+                </motion.div>
+
+              ))}
+
+            </div>
+
+          </motion.div>
+
+        ))}
+
+      </div>
+
+      {/* ================= Core Expertise ================= */}
+
+      <div className="expertise">
+
+        <motion.h3
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+        >
+          Core Expertise
+        </motion.h3>
+
+        <div className="progress-container">
+
+          <div className="progress-item">
+            <span>Backend Development</span>
+
+            <div className="progress-bar">
+
+              <motion.div
+                className="progress-fill"
+                initial={{ width: 0 }}
+                whileInView={{ width: "90%" }}
+                transition={{ duration: 1 }}
+              />
+
+            </div>
+          </div>
+
+          <div className="progress-item">
+            <span>React Development</span>
+
+            <div className="progress-bar">
+
+              <motion.div
+                className="progress-fill"
+                initial={{ width: 0 }}
+                whileInView={{ width: "85%" }}
+                transition={{ duration: 1 }}
+              />
+
+            </div>
+          </div>
+
+          <div className="progress-item">
+            <span>Data Analytics</span>
+
+            <div className="progress-bar">
+
+              <motion.div
+                className="progress-fill"
+                initial={{ width: 0 }}
+                whileInView={{ width: "80%" }}
+                transition={{ duration: 1 }}
+              />
+
+            </div>
+          </div>
+
+          <div className="progress-item">
+            <span>Problem Solving</span>
+
+            <div className="progress-bar">
+
+              <motion.div
+                className="progress-fill"
+                initial={{ width: 0 }}
+                whileInView={{ width: "88%" }}
+                transition={{ duration: 1 }}
+              />
+
+            </div>
+          </div>
+
         </div>
-      </section>
 
-      <section id="about" className="about">
-        <h2>About Me</h2>
+      </div>
 
-        <p>
-          Backend Developer skilled in Node.js and MongoDB, with a
-          strong interest in data analysis and building efficient,
-          real-world applications.
-        </p>
-      </section>
+    </section>
 
-      <section id="skills" className="skills">
-        <h2 style={{ marginTop: "60px" }}>Skills</h2>
+        {/* ================= Projects ================= */}
 
-        <div className="skills-grid">
-          {skills.map((skill, index) => (
-            <motion.div
-              key={index}
-              className="skill-card"
-              whileHover={{ y: -4 }}
-            >
-              <h3>{skill}</h3>
-            </motion.div>
-          ))}
-        </div>
-      </section>
+    <section id="projects" className="projects">
 
-      <section id="projects" className="projects">
-        <h2>Projects</h2>
+      <motion.h2
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+      >
+        Featured Projects
+      </motion.h2>
 
-        <div className="projects-grid">
-          {projects.map((project, index) => (
-            <motion.div
-              key={index}
-              className="project-card"
-              whileHover={{ y: -4 }}
-            >
+      <motion.p
+        className="section-desc"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
+        A collection of projects showcasing my skills in
+        full-stack development, backend engineering,
+        AI integration, and modern web technologies.
+      </motion.p>
+
+      <div className="projects-grid">
+
+        {projects.map((project, index) => (
+
+          <motion.div
+            key={index}
+            className="project-card"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            whileHover={{
+              y: -10,
+              scale: 1.02
+            }}
+            transition={{ duration: 0.4 }}
+            viewport={{ once: true }}
+          >
+
+            <div className="project-header">
+
               <h3>{project.title}</h3>
-              <p>{project.desc}</p>
+
+              <span className="project-badge">
+                Featured
+              </span>
+
+            </div>
+
+            <h4 className="project-subtitle">
+              {project.subtitle}
+            </h4>
+
+            <p className="project-desc">
+              {project.desc}
+            </p>
+
+            <div className="tech-stack">
+
+              {project.tech.map((tech, i) => (
+
+                <span
+                  key={i}
+                  className="tech-badge"
+                >
+                  {tech}
+                </span>
+
+              ))}
+
+            </div>
+
+            <div className="project-actions">
 
               <a
-                href={project.link}
+                href={project.live}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="card-link"
+                className="live-btn"
               >
-                Open →
+                🚀 Live Demo
               </a>
-            </motion.div>
-          ))}
-        </div>
-      </section>
 
-      <section id="profiles" className="profiles">
-        <h2>Profiles</h2>
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="github-btn"
+              >
+                💻 GitHub
+              </a>
 
-        <div className="profiles-grid">
-          {profiles.map((profile, index) => (
-            <motion.div
-              key={index}
-              className="profile-card"
-              whileHover={{ y: -4 }}
+            </div>
+
+          </motion.div>
+
+        ))}
+
+      </div>
+
+      {/* ================= Project Highlights ================= */}
+
+      <div className="project-highlights">
+
+        <motion.div
+          className="highlight-box"
+          whileHover={{ scale: 1.05 }}
+        >
+          <h3>FoodRush</h3>
+
+          <p>
+            MERN-based food delivery platform with
+            authentication, admin dashboard,
+            payments, and order tracking.
+          </p>
+
+        </motion.div>
+
+        <motion.div
+          className="highlight-box"
+          whileHover={{ scale: 1.05 }}
+        >
+          <h3>PathPilot</h3>
+
+          <p>
+            AI-powered career roadmap generator
+            providing personalized learning paths.
+          </p>
+
+        </motion.div>
+
+        <motion.div
+          className="highlight-box"
+          whileHover={{ scale: 1.05 }}
+        >
+          <h3>Portfolio</h3>
+
+          <p>
+            Modern React portfolio featuring
+            animations, dark mode,
+            responsive design, and EmailJS.
+          </p>
+
+        </motion.div>
+
+      </div>
+
+    </section>
+        {/* ================= Profiles ================= */}
+
+    <section id="profiles" className="profiles">
+
+      <motion.h2
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+      >
+        Coding Profiles
+      </motion.h2>
+
+      <motion.p
+        className="section-desc"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
+        Explore my coding journey, open-source work,
+        competitive programming, and professional network.
+      </motion.p>
+
+      <div className="profiles-grid">
+
+        {profiles.map((profile, index) => (
+
+          <motion.div
+            key={index}
+            className="profile-card"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            whileHover={{
+              y: -10,
+              scale: 1.03
+            }}
+            transition={{
+              duration: 0.35
+            }}
+            viewport={{ once: true }}
+          >
+
+            <div className="profile-icon">
+
+              {profile.title === "GitHub" && "💻"}
+              {profile.title === "LinkedIn" && "💼"}
+              {profile.title === "LeetCode" && "🧩"}
+              {profile.title === "CodeChef" && "👨‍🍳"}
+              {profile.title === "HackerRank" && "🏆"}
+              {profile.title === "HackerEarth" && "🌍"}
+
+            </div>
+
+            <h3>{profile.title}</h3>
+
+            <p>{profile.desc}</p>
+
+            <a
+              href={profile.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="profile-btn"
             >
-              <h3>{profile.title}</h3>
-              <p>{profile.desc}</p>
+              Visit Profile →
+            </a>
 
-              <a
-                href={profile.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="card-link"
-              >
-                Open →
-              </a>
-            </motion.div>
-          ))}
+          </motion.div>
+
+        ))}
+
+      </div>
+
+      {/* ================= Achievements ================= */}
+
+      <motion.div
+        className="achievement-section"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
+
+        <h3>Highlights</h3>
+
+        <div className="achievement-grid">
+
+          <div className="achievement-card">
+            <h2>300+</h2>
+            <p>LeetCode Problems Solved</p>
+          </div>
+
+          <div className="achievement-card">
+            <h2>100+</h2>
+            <p>Medium Problems</p>
+          </div>
+
+          <div className="achievement-card">
+            <h2>6+</h2>
+            <p>Projects Built</p>
+          </div>
+
+          <div className="achievement-card">
+            <h2>12+</h2>
+            <p>Technologies Used</p>
+          </div>
+
         </div>
-      </section>
 
-      <section id="contact" className="contact">
-        <h2>Contact</h2>
+      </motion.div>
 
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            name="user_name"
-            placeholder="Name"
-            required
-          />
+    </section>
 
-          <input
-            type="email"
-            name="user_email"
-            placeholder="Email"
-            required
-          />
+    {/* ================= Contact ================= */}
 
-          <textarea
-            name="message"
-            placeholder="Message"
-            required
-          />
+    <section id="contact" className="contact">
 
-          <button type="submit" disabled={loading}>
-            {loading ? "Sending..." : "Send"}
-          </button>
+      <motion.h2
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+      >
+        Let's Connect
+      </motion.h2>
 
-          {success && <p style={{ color: "#00ffae" }}>{success}</p>}
-          {errorMsg && <p style={{ color: "#ff6b6b" }}>{errorMsg}</p>}
-        </form>
-      </section>
-      <footer className="footer">
-  <h3>Contact Details</h3>
+      <motion.p
+        className="section-desc"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+      >
+        Have an opportunity, project, or just want to say hello?
+        Feel free to reach out.
+      </motion.p>
 
-  <p>
-  📞{" "}
-  <a href="tel:+917671904792">
-    +91 76719 04792
-  </a>
-</p>
-        
-<p>
-  💬{" "}
-  <a
-    href="https://wa.me/7671904792"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    7671904792
-  </a>
-</p>
-  <p>
-    📧{" "}
-    <a href="mailto:yagnesh471@gmail.com">
-      yagnesh471@gmail.com
-    </a>
-  </p>
+      <form onSubmit={handleSubmit} className="contact-form">
 
-  <p>
-    ig:{" "}
-    <a
-      href="https://instagram.com/yagnesh_.471"
-      target="_blank"
-      rel="noopener noreferrer"
+        <input
+          type="text"
+          name="user_name"
+          placeholder="Your Name"
+          required
+        />
+
+        <input
+          type="email"
+          name="user_email"
+          placeholder="Your Email"
+          required
+        />
+
+        <textarea
+          name="message"
+          rows="6"
+          placeholder="Your Message"
+          required
+        />
+
+        <button
+          type="submit"
+          disabled={loading}
+          className="send-btn"
+        >
+          {loading ? "Sending..." : "Send Message"}
+        </button>
+
+        {success && (
+          <p className="success-msg">
+            {success}
+          </p>
+        )}
+
+        {errorMsg && (
+          <p className="error-msg">
+            {errorMsg}
+          </p>
+        )}
+
+      </form>
+
+    </section>
+
+        {/* ================= Footer ================= */}
+
+    <footer className="footer">
+
+      <motion.h2
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
+        Let's Build Something Amazing 🚀
+      </motion.h2>
+
+      <p className="footer-text">
+        Thanks for visiting my portfolio. Whether you have an
+        opportunity, project idea, or just want to connect,
+        I'd love to hear from you.
+      </p>
+
+      {/* Contact Cards */}
+
+      <div className="footer-grid">
+
+        <motion.a
+          whileHover={{ y: -5 }}
+          href="tel:+917671904792"
+          className="footer-card"
+        >
+          <h3>📞 Phone</h3>
+          <span>+91 76719 04792</span>
+        </motion.a>
+
+        <motion.a
+          whileHover={{ y: -5 }}
+          href="mailto:yagnesh471@gmail.com"
+          className="footer-card"
+        >
+          <h3>📧 Email</h3>
+          <span>yagnesh471@gmail.com</span>
+        </motion.a>
+
+        <motion.a
+          whileHover={{ y: -5 }}
+          href="https://wa.me/917671904792"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="footer-card"
+        >
+          <h3>💬 WhatsApp</h3>
+          <span>Chat with me</span>
+        </motion.a>
+
+        <motion.a
+          whileHover={{ y: -5 }}
+          href="https://instagram.com/yagnesh_.471"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="footer-card"
+        >
+          <h3>📷 Instagram</h3>
+          <span>@yagnesh_.471</span>
+        </motion.a>
+
+      </div>
+
+      {/* Quick Links */}
+
+      <div className="footer-links">
+
+        <a href="#home">Home</a>
+
+        <a href="#about">About</a>
+
+        <a href="#skills">Skills</a>
+
+        <a href="#projects">Projects</a>
+
+        <a href="#profiles">Profiles</a>
+
+        <a href="#contact">Contact</a>
+
+      </div>
+
+      {/* Copyright */}
+
+      <p className="copyright">
+        © {new Date().getFullYear()} Yagnesh. All Rights Reserved.
+      </p>
+
+    </footer>
+
+    {/* Scroll To Top */}
+
+    <motion.button
+      className="scroll-top"
+      whileHover={{
+        scale: 1.1
+      }}
+      whileTap={{
+        scale: 0.95
+      }}
+      onClick={() =>
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        })
+      }
     >
-      @yagnesh_.471
-    </a>
-  </p>
+      ↑
+    </motion.button>
 
-  <p className="copyright">
-    © 2026 yagnesh. All Rights Reserved.
-  </p>
-</footer>
-    </div>
-  );
+  </div>
+);
 }
