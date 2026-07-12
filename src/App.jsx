@@ -553,9 +553,9 @@ export default function Portfolio() {
 
         </motion.div>
 
-      </div>
+      </div>==================*/}
 
-    </section>==================*/}
+    </section>
 
         {/* ================= Skills ================= */}
 
