@@ -2288,3 +2288,133 @@ width:100%;
     color:white;
     font-weight:600;
 }
+
+/* ===========================
+        Profiles Highlights
+=========================== */
+
+.achievement-section{
+    margin-top:80px;
+    text-align:center;
+}
+
+.achievement-section h3{
+    font-size:2rem;
+    color:var(--primary);
+    margin-bottom:35px;
+}
+
+.achievement-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.achievement-card{
+    background:rgba(255,255,255,.05);
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:35px;
+    backdrop-filter:blur(16px);
+    transition:.35s;
+}
+
+.achievement-card:hover{
+    transform:translateY(-8px);
+    border-color:rgba(139,92,246,.4);
+    box-shadow:0 20px 40px rgba(139,92,246,.18);
+}
+
+.achievement-card h2{
+    color:var(--primary);
+    font-size:2.4rem;
+    margin-bottom:12px;
+}
+
+.achievement-card p{
+    color:var(--sub);
+}
+
+/* ===========================
+            Contact
+=========================== */
+
+.contact{
+    text-align:center;
+}
+
+.contact-form{
+    max-width:700px;
+    margin:50px auto 0;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    padding:18px;
+    border-radius:15px;
+    border:1px solid var(--border);
+    background:rgba(255,255,255,.05);
+    color:var(--text);
+    font-size:1rem;
+    outline:none;
+    transition:.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+    border-color:var(--primary);
+    box-shadow:0 0 20px rgba(139,92,246,.2);
+}
+
+.contact-form textarea{
+    resize:vertical;
+    min-height:160px;
+}
+
+.send-btn{
+    border:none;
+    cursor:pointer;
+    background:linear-gradient(135deg,var(--primary),#3b82f6);
+    color:#fff;
+    font-size:1rem;
+    font-weight:600;
+    padding:16px;
+    border-radius:14px;
+    transition:.35s;
+}
+
+.send-btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 15px 35px rgba(139,92,246,.25);
+}
+
+.send-btn:disabled{
+    opacity:.7;
+    cursor:not-allowed;
+}
+
+.success-msg{
+    color:#22c55e;
+    font-weight:600;
+}
+
+.error-msg{
+    color:#ef4444;
+    font-weight:600;
+}
+
+@media(max-width:768px){
+
+.achievement-grid{
+    grid-template-columns:1fr;
+}
+
+.contact-form{
+    width:100%;
+}
+
+}
