@@ -519,7 +519,7 @@ export default function Portfolio() {
 
       </div>
 
-      {/* ================= Highlights ================= */}
+      {/* ================= Highlights ================= 
 
       <div className="highlights">
 
@@ -555,7 +555,7 @@ export default function Portfolio() {
 
       </div>
 
-    </section>
+    </section>==================*/}
 
         {/* ================= Skills ================= */}
 
@@ -804,7 +804,7 @@ export default function Portfolio() {
 
       </div>
 
-      {/* ================= Project Highlights ================= */}
+      {/* ================= Project Highlights ================= 
 
       <div className="project-highlights">
 
@@ -851,7 +851,7 @@ export default function Portfolio() {
 
       </div>
 
-    </section>
+    </section>==========================*/}
         {/* ================= Profiles ================= */}
 
     <section id="profiles" className="profiles">
