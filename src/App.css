@@ -2217,3 +2217,22 @@ width:100%;
 }
 
 }
+
+.made-by{
+    margin-top:16px;
+    text-align:center;
+    font-size:0.75rem;
+    color:var(--text);
+    opacity:0.18;
+    letter-spacing:0.5px;
+    transition:opacity .3s ease;
+    user-select:none;
+}
+
+.made-by:hover{
+    opacity:0.45;
+}
+
+.heart{
+    color:inherit;
+}
