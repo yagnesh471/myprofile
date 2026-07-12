@@ -703,6 +703,8 @@ export default function Portfolio() {
 
     </section>  ================ */}
 
+    </section>
+
         {/* ================= Projects ================= */}
 
     <section id="projects" className="projects">
@@ -852,6 +854,8 @@ export default function Portfolio() {
       </div>
 
     </section>==========================*/}
+
+    </section>
         {/* ================= Profiles ================= */}
 
     <section id="profiles" className="profiles">
