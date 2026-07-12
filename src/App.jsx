@@ -38,15 +38,15 @@ export default function Portfolio() {
 
   const stats = [
     {
-      number: "300+",
+      number: "100+",
       label: "LeetCode Problems",
     },
     {
-      number: "6+",
+      number: "3+",
       label: "Projects",
     },
     {
-      number: "12+",
+      number: "6+",
       label: "Technologies",
     },
     {
@@ -194,7 +194,7 @@ export default function Portfolio() {
 
     {
       title: "LeetCode",
-      desc: "300+ coding problems solved.",
+      desc: "100+ coding problems solved.",
       link: "https://leetcode.com/241fa04562",
     },
 
