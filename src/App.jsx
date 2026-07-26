@@ -146,7 +146,7 @@ export default function Portfolio() {
       tech: [
         "Html",
         "CSS",
-        "javaScripy"
+        "javaScripy",
         "grokAI",
         "Node",
       ],
