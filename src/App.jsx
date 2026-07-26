@@ -479,6 +479,24 @@ export default function Portfolio() {
 
           <p>2024 - 2028</p>
 
+          <p>
+            <strong>Intermediate</strong>
+          </p>
+
+          <p>Sri Chaitanya</p>
+
+          <p>2022 - 2024</p>
+
+          <p>
+            <strong>SSC</strong>
+          </p>
+
+          <p>Mount Basil CBSE scl</p>
+
+          <p>2019 - 2022</p>
+          
+          
+
         </motion.div>
 
         <motion.div
