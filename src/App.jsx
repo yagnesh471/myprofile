@@ -67,7 +67,6 @@ export default function Portfolio() {
         "CSS3",
         "JavaScript",
         "React",
-        "Framer Motion",
       ],
     },
 
@@ -77,7 +76,6 @@ export default function Portfolio() {
         "Node.js",
         "Express.js",
         "REST APIs",
-        "JWT Authentication",
       ],
     },
 
@@ -125,8 +123,8 @@ export default function Portfolio() {
 
       tech: [
         "Html",
-        "CSS"
-        "javaScript"
+        "CSS",
+        "javaScript",
         "Node",
         "Express",
         "MongoDB",
@@ -146,8 +144,10 @@ export default function Portfolio() {
         "An AI-powered platform that generates personalized career roadmaps with secure history tracking and modern UI.",
 
       tech: [
-        "React",
-        "AI",
+        "Html",
+        "CSS",
+        "javaScripy"
+        "grokAI",
         "Node",
       ],
 
@@ -925,7 +925,7 @@ export default function Portfolio() {
 
       </div>
 
-      {/* ================= Achievements ================= */}
+      {/* ================= Achievements 
 
       <motion.div
         className="achievement-section"
@@ -956,7 +956,7 @@ export default function Portfolio() {
 
         </div>
 
-      </motion.div>
+      </motion.div>================= */}
 
     </section>
 
@@ -1065,7 +1065,7 @@ export default function Portfolio() {
           className="footer-card"
         >
           <h3>📧 Email</h3>
-          <span>yagnesh471@gmail.com</span>
+          <span>tyr2203@gmail.com</span>
         </motion.a>
 
         <motion.a
