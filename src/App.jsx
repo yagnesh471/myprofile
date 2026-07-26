@@ -479,24 +479,6 @@ export default function Portfolio() {
 
           <p>2024 - 2028</p>
 
-          <p>
-            <strong>Intermediate</strong>
-          </p>
-
-          <p>Sri Chaitanya</p>
-
-          <p>2022 - 2024</p>
-
-          <p>
-            <strong>SSC</strong>
-          </p>
-
-          <p>Mount Basil CBSE scl</p>
-
-          <p>2019 - 2022</p>
-          
-          
-
         </motion.div>
 
         <motion.div
@@ -507,13 +489,15 @@ export default function Portfolio() {
 
           <ul>
 
-            <li>Full Stack Web Apps</li>
+            <li>MERN Stack</li>
 
-            <li>Database Design</li>
+            <li>Database Management</li>
 
             <li>Data Analytics</li>
 
             <li>AI-powered Applications</li>
+
+            <li>DSA & Programming</li>
 
           </ul>
 
@@ -527,7 +511,7 @@ export default function Portfolio() {
 
           <ul>
 
-            <li>System Design</li>
+            <li>System Design Basics</li>
 
             <li>Advanced DSA</li>
 
