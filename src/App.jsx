@@ -175,7 +175,7 @@ export default function Portfolio() {
       live: "https://fraud-detection07.netlify.app/",
 
       github: "https://github.com/yagnesh471/fraud-detection",
-    }
+    },
     {
       title: "Developer Portfolio",
 
