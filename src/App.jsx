@@ -155,7 +155,32 @@ export default function Portfolio() {
 
       github: "https://github.com/yagnesh471/pathpilot",
     },
+    {
+  title: "Fraud Detection",
 
+  subtitle: "AI-Powered Credit Card Fraud Detection",
+
+  desc:
+    "A machine learning platform that analyzes credit card transactions and predicts fraud probability using an XGBoost model, with prediction history and an interactive dashboard.",
+
+  tech: [
+    "React",
+    "CSS",
+    "JavaScript",
+    "Express.js",
+    "Flask",
+    "XGBoost",
+    "MongoDB",
+  ],
+      live: "https://fraud-detection07.netlify.app/",
+
+      github: "https://github.com/yagnesh471/fraud-detection",
+}
+
+      live: "https://pathpilot07.netlify.app/",
+
+      github: "https://github.com/yagnesh471/pathpilot",
+    },
     {
       title: "Developer Portfolio",
 
