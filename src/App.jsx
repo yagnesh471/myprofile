@@ -175,12 +175,7 @@ export default function Portfolio() {
       live: "https://fraud-detection07.netlify.app/",
 
       github: "https://github.com/yagnesh471/fraud-detection",
-}
-
-      live: "https://pathpilot07.netlify.app/",
-
-      github: "https://github.com/yagnesh471/pathpilot",
-    },
+    }
     {
       title: "Developer Portfolio",
 
