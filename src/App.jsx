@@ -1118,7 +1118,7 @@ export default function Portfolio() {
         © {new Date().getFullYear()} Yagnesh. All Rights Reserved.
       </p>
       <p className="made-by">
-          Built with <span className="heart">❤</span> by Yagnesh
+          Built with <span className="heart">❤</span>
       </p>
 
     </footer>
