@@ -146,7 +146,7 @@ export default function Portfolio() {
       tech: [
         "Html",
         "CSS",
-        "javaScripy",
+        "javaScript",
         "grokAI",
         "Node",
       ],
@@ -193,6 +193,23 @@ export default function Portfolio() {
       live: "https://myportfoliotyr.netlify.app",
 
       github: "https://github.com/yagnesh471/myprofile",
+    },
+    {
+      title: "CampusAI — Placement Agent",
+
+      subtitle: "AI-Powered Campus Placement & Interview Coordination Platform",
+
+      desc:
+        "AI-powered placement platform for candidate matching, eligibility, interview scheduling, and placement analytics using MERN.",
+
+      tech: [
+        "MERN",
+        "GROK API",
+      ],
+
+      live: "https://ai-placement-agent-07.onrender.com",
+
+      github: "https://github.com/yagnesh471/ai-placement-agent",
     },
   ];
 
