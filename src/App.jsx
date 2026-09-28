@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
+import CodingActivity from "./components/CodingActivity/CodingActivity";
+import { FaGithub, FaLinkedin, FaPhone, FaEnvelope, FaWhatsapp, FaInstagram, FaLaptopCode } from "react-icons/fa";
+import { SiLeetcode, SiCodechef, SiHackerrank, SiHackerearth } from "react-icons/si";
+import tufLogo from "./assets/tuf-logo.png";
 import "./App.css";
 
 export default function Portfolio() {
@@ -8,7 +12,7 @@ export default function Portfolio() {
         Theme
   =========================== */
 
-  const [dark, setDark] = useState(true);
+  const [dark, setDark] = useState(false);
 
   /* ===========================
         Hero Typing
@@ -130,7 +134,7 @@ export default function Portfolio() {
         "MongoDB",
       ],
 
-      live: "https://foodrush07.netlify.app/",
+      live: "https://foodrush-07.onrender.com/",
 
       github: "https://github.com/yagnesh471/foodrush",
     },
@@ -247,8 +251,7 @@ export default function Portfolio() {
     {
       title: "HackerRank",
       desc: "Programming certifications and practice.",
-      link:
-        "https://www.hackerrank.com/profile/vu_241fa04562",
+      link: "https://www.hackerrank.com/profile/yagnesh471",
     },
 
     {
@@ -256,6 +259,12 @@ export default function Portfolio() {
       desc: "Coding challenges and contests.",
       link:
         "https://www.hackerearth.com/@yagneshwar2/",
+    },
+
+    {
+      title: "Take U Forward",
+      desc: "Mastering DSA and interview preparation.",
+      link: "https://takeuforward.org/profile/yagnesh471",
     },
   ];
 
@@ -351,6 +360,7 @@ export default function Portfolio() {
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
         <a href="#profiles">Profiles</a>
+        <a href="#activity">Activity</a>
         <a href="#contact">Contact</a>
       </div>
 
@@ -893,6 +903,7 @@ export default function Portfolio() {
       </div>==========================*/}
 
     </section>
+
         {/* ================= Profiles ================= */}
 
     <section id="profiles" className="profiles">
@@ -934,15 +945,14 @@ export default function Portfolio() {
             viewport={{ once: true }}
           >
 
-            <div className="profile-icon">
-
-              {profile.title === "GitHub" && "💻"}
-              {profile.title === "LinkedIn" && "💼"}
-              {profile.title === "LeetCode" && "🧩"}
-              {profile.title === "CodeChef" && "👨‍🍳"}
-              {profile.title === "HackerRank" && "🏆"}
-              {profile.title === "HackerEarth" && "🌍"}
-
+            <div className="profile-icon" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              {profile.title === "GitHub" && <FaGithub size={40} />}
+              {profile.title === "LinkedIn" && <FaLinkedin size={40} color="#0077b5" />}
+              {profile.title === "LeetCode" && <SiLeetcode size={40} color="#ffa116" />}
+              {profile.title === "CodeChef" && <SiCodechef size={40} color="#5B4638" />}
+              {profile.title === "HackerRank" && <SiHackerrank size={40} color="#2EC866" />}
+              {profile.title === "HackerEarth" && <SiHackerearth size={40} color="#323754" />}
+              {profile.title === "Take U Forward" && <img src={tufLogo} alt="Take U Forward" style={{ width: '40px', height: '40px', borderRadius: '4px' }} />}
             </div>
 
             <h3>{profile.title}</h3>
@@ -998,6 +1008,9 @@ export default function Portfolio() {
       </motion.div>================= */}
 
     </section>
+
+    {/* ================= Activity ================= */}
+    <CodingActivity />
 
     {/* ================= Contact ================= */}
 
@@ -1076,7 +1089,7 @@ export default function Portfolio() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
       >
-        Let's Build Something Amazing 🚀
+        Let's Build Something Amazing <span style={{ WebkitTextFillColor: "initial", color: "initial", background: "none" }}>{"\uD83D\uDE80"}</span>
       </motion.h2>
 
       <p className="footer-text">
@@ -1094,7 +1107,7 @@ export default function Portfolio() {
           href="tel:+917671904792"
           className="footer-card"
         >
-          <h3>📞 Phone</h3>
+          <h3><FaPhone color="#00C853" style={{ marginRight: '8px' }} /> Phone</h3>
           <span>+91 76719 04792</span>
         </motion.a>
 
@@ -1103,7 +1116,7 @@ export default function Portfolio() {
           href="mailto:yagnesh471@gmail.com"
           className="footer-card"
         >
-          <h3>📧 Email</h3>
+          <h3><FaEnvelope color="#D44638" style={{ marginRight: '8px' }} /> Email</h3>
           <span>tyr2203@gmail.com</span>
         </motion.a>
 
@@ -1114,7 +1127,7 @@ export default function Portfolio() {
           rel="noopener noreferrer"
           className="footer-card"
         >
-          <h3>💬 WhatsApp</h3>
+          <h3><FaWhatsapp color="#25D366" style={{ marginRight: '8px' }} /> WhatsApp</h3>
           <span>Chat with me</span>
         </motion.a>
 
@@ -1125,7 +1138,7 @@ export default function Portfolio() {
           rel="noopener noreferrer"
           className="footer-card"
         >
-          <h3>📷 Instagram</h3>
+          <h3><FaInstagram color="#E1306C" style={{ marginRight: '8px' }} /> Instagram</h3>
           <span>@yagnesh_.471</span>
         </motion.a>
 
