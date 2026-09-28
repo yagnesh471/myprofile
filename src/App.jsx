@@ -42,11 +42,11 @@ export default function Portfolio() {
 
   const stats = [
     {
-      number: "100+",
-      label: "LeetCode Problems",
+      number: "400+",
+      label: "DSA problems",
     },
     {
-      number: "3+",
+      number: "5+",
       label: "Projects",
     },
     {
@@ -80,6 +80,7 @@ export default function Portfolio() {
         "Node.js",
         "Express.js",
         "REST APIs",
+        "JWT",
       ],
     },
 
@@ -97,6 +98,8 @@ export default function Portfolio() {
         "Java",
         "Python",
         "C++",
+        "JavaScript",
+        "C",
       ],
     },
 
