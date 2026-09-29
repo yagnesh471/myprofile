@@ -19,9 +19,8 @@ export default function Portfolio() {
   =========================== */
 
   const roles = [
-    "Backend Developer",
-    "Data Analyst",
-    "AI Enthusiast",
+    "MERN Stack Developer",
+    "Exploring AI Integration",
   ];
 
   const [currentRole, setCurrentRole] = useState("");
