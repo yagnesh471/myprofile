@@ -48,15 +48,15 @@
 
 /* Light Theme */
 .app.light {
-  --bg: #FFF4D6;
+  --bg: #f8fafc;
   --text: #0f172a;
   --text-muted: #64748b;
   --card-bg: rgba(255, 255, 255, 0.7);
   --border: rgba(0, 0, 0, 0.08);
-  --nav-bg: rgba(255, 244, 214, 0.8);
-  --primary: #FC6C26;
-  --primary-hover: #e65c15;
-  --secondary: #ff8c42;
+  --nav-bg: rgba(248, 250, 252, 0.8);
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --secondary: #9333ea;
   --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
   --input-bg: rgba(0, 0, 0, 0.03);
 }

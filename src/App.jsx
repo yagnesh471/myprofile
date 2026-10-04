@@ -12,7 +12,12 @@ export default function Portfolio() {
         Theme
   =========================== */
 
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useState(() => {
+    if (typeof window !== "undefined") {
+      return window.matchMedia("(prefers-color-scheme: dark)").matches;
+    }
+    return true; // Default fallback
+  });
 
   /* ===========================
         Hero Typing
