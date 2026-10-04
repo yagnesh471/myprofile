@@ -34,29 +34,29 @@
 /* Dark Theme */
 .app.dark {
   --bg: #09090b;
-  --text: #f8fafc;
+  --text: #F8F7F4;
   --text-muted: #a1a1aa;
   --card-bg: rgba(24, 24, 27, 0.6);
   --border: rgba(255, 255, 255, 0.08);
   --nav-bg: rgba(9, 9, 11, 0.8);
-  --primary: #6366f1;
-  --primary-hover: #4f46e5;
-  --secondary: #a855f7;
+  --primary: #0057FF;
+  --primary-hover: #0046cc;
+  --secondary: #3388ff;
   --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
   --input-bg: rgba(255, 255, 255, 0.05);
 }
 
 /* Light Theme */
 .app.light {
-  --bg: #f8fafc;
+  --bg: #FFF4D6;
   --text: #0f172a;
   --text-muted: #64748b;
   --card-bg: rgba(255, 255, 255, 0.7);
   --border: rgba(0, 0, 0, 0.08);
-  --nav-bg: rgba(248, 250, 252, 0.8);
-  --primary: #4f46e5;
-  --primary-hover: #4338ca;
-  --secondary: #9333ea;
+  --nav-bg: rgba(255, 244, 214, 0.8);
+  --primary: #FC6C26;
+  --primary-hover: #e65c15;
+  --secondary: #ff8c42;
   --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
   --input-bg: rgba(0, 0, 0, 0.03);
 }
