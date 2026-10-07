@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import CodingActivity from "./components/CodingActivity/CodingActivity";
-import { FaGithub, FaLinkedin, FaPhone, FaEnvelope, FaWhatsapp, FaInstagram, FaLaptopCode } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaPhone, FaEnvelope, FaWhatsapp, FaInstagram, FaLaptopCode, FaUsers } from "react-icons/fa";
 import { SiLeetcode, SiCodechef, SiHackerrank, SiHackerearth } from "react-icons/si";
 import tufLogo from "./assets/tuf-logo.png";
 import "./App.css";
@@ -39,6 +39,20 @@ export default function Portfolio() {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
+  
+  const [views, setViews] = useState(0);
+
+  useEffect(() => {
+    fetch('https://hits.sh/yagnesh471.netlify.app.svg')
+      .then(res => res.text())
+      .then(svg => {
+        const match = svg.match(/<title>hits: (.*?)<\/title>/);
+        if (match && match[1]) {
+          setViews(parseInt(match[1]).toLocaleString());
+        }
+      })
+      .catch(err => console.error("Error fetching views:", err));
+  }, []);
 
   /* ===========================
         Statistics
@@ -1169,14 +1183,16 @@ export default function Portfolio() {
 
       </div>
 
-      {/* Copyright */}
-
-      <p className="copyright">
-        © {new Date().getFullYear()} Yagnesh. All Rights Reserved.
-      </p>
-      <p className="made-by">
-          Built with <span className="heart">❤</span>
-      </p>
+      {/* Footer Bottom (Copyright & Views) */}
+      <div className="footer-bottom">
+        <p className="copyright">
+          © {new Date().getFullYear()} Yagnesh • Software Engineer
+        </p>
+        <div className="views-badge">
+          <FaUsers size={16} color="var(--primary)" style={{ marginRight: '6px' }} /> 
+          Views: <strong>{views}</strong>
+        </div>
+      </div>
 
     </footer>
 
