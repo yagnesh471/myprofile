@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import CodingActivity from "./components/CodingActivity/CodingActivity";
 import { FaGithub, FaLinkedin, FaPhone, FaEnvelope, FaWhatsapp, FaInstagram, FaLaptopCode } from "react-icons/fa";
-import { SiLeetcode, SiCodechef, SiHackerrank, SiHackerearth } from "react-icons/si";
 import tufLogo from "./assets/tuf-logo.png";
 import "./App.css";
 
@@ -49,23 +48,19 @@ export default function Portfolio() {
   const stats = [
     {
       number: "3+",
-      title: "MERN Applications",
-      description: "Highlights your ability to build complete, end-to-end systems like FoodRush and your Expense Tracker.",
+      label: "MERN Applications",
     },
     {
       number: "10+",
-      title: "REST APIs",
-      description: "Emphasizes your backend architecture and data routing work using Node.js and Express.",
+      label: "REST APIs",
     },
     {
       number: "5+",
-      title: "Cloud Deployments",
-      description: "Proves you know how to ship production code to the web using platforms like Render, Railway, and Netlify.",
+      label: "Cloud Deployments",
     },
     {
       number: "150+",
-      title: "GitHub Commits",
-      description: "Demonstrates consistent version control habits and active development across your repositories.",
+      label: "GitHub Commits",
     },
   ];
 
@@ -152,68 +147,8 @@ export default function Portfolio() {
 
       github: "https://github.com/yagnesh471/foodrush",
     },
-
     {
-      title: "PathPilot",
-
-      subtitle: "AI Career Roadmap Generator",
-
-      desc:
-        "An AI-powered platform that generates personalized career roadmaps with secure history tracking and modern UI.",
-
-      tech: [
-        "Html",
-        "CSS",
-        "javaScript",
-        "grokAI",
-        "Node",
-      ],
-
-      live: "https://pathpilot07.netlify.app/",
-
-      github: "https://github.com/yagnesh471/pathpilot",
-    },
-    {
-  title: "Fraud Detection",
-
-  subtitle: "AI-Powered Credit Card Fraud Detection",
-
-  desc:
-    "A machine learning platform that analyzes credit card transactions and predicts fraud probability using an XGBoost model, with prediction history and an interactive dashboard.",
-
-  tech: [
-    "React",
-    "CSS",
-    "JavaScript",
-    "Express.js",
-    "Flask",
-    "XGBoost",
-    "MongoDB",
-  ],
-      live: "https://fraud-detection07.netlify.app/",
-
-      github: "https://github.com/yagnesh471/fraud-detection",
-    },
-    {
-      title: "Developer Portfolio",
-
-      subtitle: "Responsive React Portfolio",
-
-      desc:
-        "Personal portfolio featuring animations, dark mode, project showcase, EmailJS integration and responsive design.",
-
-      tech: [
-        "React",
-        "CSS",
-        "Framer Motion",
-      ],
-
-      live: "https://myportfoliotyr.netlify.app",
-
-      github: "https://github.com/yagnesh471/myprofile",
-    },
-    {
-      title: "CampusAI — Placement Agent",
+      title: "AI Placement Agent",
 
       subtitle: "AI-Powered Campus Placement & Interview Coordination Platform",
 
@@ -228,6 +163,28 @@ export default function Portfolio() {
       live: "https://ai-placement-agent-07.onrender.com",
 
       github: "https://github.com/yagnesh471/ai-placement-agent",
+    },
+    {
+      title: "Fraud Detection",
+
+      subtitle: "AI-Powered Credit Card Fraud Detection",
+
+      desc:
+        "A machine learning platform that analyzes credit card transactions and predicts fraud probability using an XGBoost model, with prediction history and an interactive dashboard.",
+
+      tech: [
+        "React",
+        "CSS",
+        "JavaScript",
+        "Express.js",
+        "Flask",
+        "XGBoost",
+        "MongoDB",
+      ],
+
+      live: "https://fraud-detection07.netlify.app/",
+
+      github: "https://github.com/yagnesh471/fraud-detection",
     },
   ];
 
@@ -247,32 +204,6 @@ export default function Portfolio() {
       desc: "Connect with me professionally.",
       link:
         "https://www.linkedin.com/in/yagneshwar-reddy-00ba163a3",
-    },
-
-    {
-      title: "LeetCode",
-      desc: "100+ coding problems solved.",
-      link: "https://leetcode.com/241fa04562",
-    },
-
-    {
-      title: "CodeChef",
-      desc: "Competitive programming profile.",
-      link:
-        "https://www.codechef.com/users/vu2_241fa04562",
-    },
-
-    {
-      title: "HackerRank",
-      desc: "Programming certifications and practice.",
-      link: "https://www.hackerrank.com/profile/yagnesh471",
-    },
-
-    {
-      title: "HackerEarth",
-      desc: "Coding challenges and contests.",
-      link:
-        "https://www.hackerearth.com/@yagneshwar2/",
     },
 
     {
@@ -469,9 +400,7 @@ export default function Portfolio() {
 
             <h2>{item.number}</h2>
 
-            <h4 className="stat-title">{item.title}</h4>
-
-            <p>{item.description}</p>
+            <p>{item.label}</p>
 
           </motion.div>
 
@@ -964,10 +893,6 @@ export default function Portfolio() {
             <div className="profile-icon" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               {profile.title === "GitHub" && <FaGithub size={40} />}
               {profile.title === "LinkedIn" && <FaLinkedin size={40} color="#0077b5" />}
-              {profile.title === "LeetCode" && <SiLeetcode size={40} color="#ffa116" />}
-              {profile.title === "CodeChef" && <SiCodechef size={40} color="#5B4638" />}
-              {profile.title === "HackerRank" && <SiHackerrank size={40} color="#2EC866" />}
-              {profile.title === "HackerEarth" && <SiHackerearth size={40} color="#323754" />}
               {profile.title === "Take U Forward" && <img src={tufLogo} alt="Take U Forward" style={{ width: '40px', height: '40px', borderRadius: '4px' }} />}
             </div>
 
