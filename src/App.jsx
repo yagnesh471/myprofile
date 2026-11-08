@@ -361,7 +361,7 @@ export default function Portfolio() {
       <div className="hero-buttons">
 
         <a
-          href="/resume.pdf"
+          href="/resume.pdf" rel="noopener noreferrer"
           className="primary-btn"
           target="_blank"
         >
