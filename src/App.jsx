@@ -135,12 +135,7 @@ export default function Portfolio() {
         "A production-ready Full Stack application featuring authentication, cart management, online ordering, payment flow, admin dashboard, and order tracking.",
 
       tech: [
-        "Html",
-        "CSS",
-        "javaScript",
-        "Node",
-        "Express",
-        "MongoDB",
+        "MERN"
       ],
 
       live: "https://foodrush-07.onrender.com/",
@@ -157,7 +152,7 @@ export default function Portfolio() {
 
       tech: [
         "MERN",
-        "GROK API",
+        "GROK API"
       ],
 
       live: "https://ai-placement-agent-07.onrender.com",
@@ -173,13 +168,10 @@ export default function Portfolio() {
         "A machine learning platform that analyzes credit card transactions and predicts fraud probability using an XGBoost model, with prediction history and an interactive dashboard.",
 
       tech: [
-        "React",
-        "CSS",
-        "JavaScript",
-        "Express.js",
+        "MERN",
+        "RESTAPI",
         "Flask",
-        "XGBoost",
-        "MongoDB",
+        "XGBoost"
       ],
 
       live: "https://fraud-detection07.netlify.app/",
