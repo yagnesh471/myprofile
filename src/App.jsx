@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import CodingActivity from "./components/CodingActivity/CodingActivity";
-import { FaGithub, FaLinkedin, FaPhone, FaEnvelope, FaWhatsapp, FaInstagram, FaLaptopCode, FaUsers } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaPhone, FaEnvelope, FaWhatsapp, FaInstagram, FaLaptopCode } from "react-icons/fa";
 import { SiLeetcode, SiCodechef, SiHackerrank, SiHackerearth } from "react-icons/si";
 import tufLogo from "./assets/tuf-logo.png";
 import "./App.css";
@@ -40,19 +40,7 @@ export default function Portfolio() {
   const [success, setSuccess] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
   
-  const [views, setViews] = useState(0);
 
-  useEffect(() => {
-    fetch('https://hits.sh/yagnesh471.netlify.app.svg')
-      .then(res => res.text())
-      .then(svg => {
-        const match = svg.match(/<title>hits: (.*?)<\/title>/);
-        if (match && match[1]) {
-          setViews(parseInt(match[1]).toLocaleString());
-        }
-      })
-      .catch(err => console.error("Error fetching views:", err));
-  }, []);
 
   /* ===========================
         Statistics
@@ -60,20 +48,24 @@ export default function Portfolio() {
 
   const stats = [
     {
-      number: "400+",
-      label: "DSA problems",
+      number: "3+",
+      title: "MERN Applications",
+      description: "Highlights your ability to build complete, end-to-end systems like FoodRush and your Expense Tracker.",
+    },
+    {
+      number: "10+",
+      title: "REST APIs",
+      description: "Emphasizes your backend architecture and data routing work using Node.js and Express.",
     },
     {
       number: "5+",
-      label: "Projects",
+      title: "Cloud Deployments",
+      description: "Proves you know how to ship production code to the web using platforms like Render, Railway, and Netlify.",
     },
     {
-      number: "6+",
-      label: "Technologies",
-    },
-    {
-      number: "2+",
-      label: "Years Learning",
+      number: "150+",
+      title: "GitHub Commits",
+      description: "Demonstrates consistent version control habits and active development across your repositories.",
     },
   ];
 
@@ -83,52 +75,53 @@ export default function Portfolio() {
 
   const skillCategories = [
     {
-      title: "Frontend",
+      title: "Languages",
       skills: [
-        "HTML5",
-        "CSS3",
+        "C++",
+        "Python",
         "JavaScript",
-        "React",
       ],
     },
-
     {
-      title: "Backend",
+      title: "Technologies",
       skills: [
-        "Node.js",
-        "Express.js",
+        "MERN",
         "REST APIs",
-        "JWT",
       ],
     },
-
     {
       title: "Databases",
       skills: [
-        "MongoDB",
         "SQL",
+        "MongoDB",
       ],
     },
-
     {
-      title: "Languages",
+      title: "Libraries",
       skills: [
-        "Java",
-        "Python",
-        "C++",
-        "JavaScript",
-        "C",
+        "Pandas",
+        "Matplotlib",
+        "Seaborn",
+        "Scikit-Learn",
       ],
     },
-
     {
       title: "Tools",
       skills: [
         "Git",
         "GitHub",
+        "VS Code",
         "Postman",
-        "Netlify",
-        "Render",
+      ],
+    },
+    {
+      title: "Core CS",
+      skills: [
+        "DSA",
+        "DBMS",
+        "OOP",
+        "CN",
+        "OS",
       ],
     },
   ];
@@ -476,7 +469,9 @@ export default function Portfolio() {
 
             <h2>{item.number}</h2>
 
-            <p>{item.label}</p>
+            <h4 className="stat-title">{item.title}</h4>
+
+            <p>{item.description}</p>
 
           </motion.div>
 
@@ -1183,16 +1178,14 @@ export default function Portfolio() {
 
       </div>
 
-      {/* Footer Bottom (Copyright & Views) */}
-      <div className="footer-bottom">
-        <p className="copyright">
-          © {new Date().getFullYear()} Yagnesh • Software Engineer
-        </p>
-        <div className="views-badge">
-          <FaUsers size={16} color="var(--primary)" style={{ marginRight: '6px' }} /> 
-          Views: <strong>{views}</strong>
-        </div>
-      </div>
+      {/* Copyright */}
+
+      <p className="copyright">
+        © {new Date().getFullYear()} Yagnesh. All Rights Reserved.
+      </p>
+      <p className="made-by">
+          Built with <span className="heart">❤</span>
+      </p>
 
     </footer>
 
