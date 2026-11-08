@@ -135,7 +135,8 @@ export default function Portfolio() {
         "A production-ready Full Stack application featuring authentication, cart management, online ordering, payment flow, admin dashboard, and order tracking.",
 
       tech: [
-        "MERN"
+        "MERN",
+        "RESTAPI",
       ],
 
       live: "https://foodrush-07.onrender.com/",
@@ -152,6 +153,7 @@ export default function Portfolio() {
 
       tech: [
         "MERN",
+        "RESTAPI",
         "GROK API"
       ],
 
